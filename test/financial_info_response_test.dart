@@ -12,7 +12,7 @@ void main() {
       // TODO
     });
 
-    // String balance
+    // int balance
     test('to test the property `balance`', () async {
       // TODO
     });
@@ -32,17 +32,17 @@ void main() {
       // TODO
     });
 
-    // Situation situation
+    // FinancialSituationResponse situation
     test('to test the property `situation`', () async {
       // TODO
     });
 
-    // Situation businessLine
+    // BusinessLine businessLine
     test('to test the property `businessLine`', () async {
       // TODO
     });
 
-    // String totalPersonAtCharge
+    // int totalPersonAtCharge
     test('to test the property `totalPersonAtCharge`', () async {
       // TODO
     });

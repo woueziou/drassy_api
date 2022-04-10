@@ -43,7 +43,7 @@ abstract class FinancialInfoResponse implements Built<FinancialInfoResponse, Fin
     BusinessLine? get businessLine;
 
     @BuiltValueField(wireName: r'total_person_at_charge')
-    String? get totalPersonAtCharge;
+    int? get totalPersonAtCharge;
 
     FinancialInfoResponse._();
 
@@ -113,7 +113,7 @@ class _$FinancialInfoResponseSerializer implements StructuredSerializer<Financia
             result
                 ..add(r'total_person_at_charge')
                 ..add(serializers.serialize(object.totalPersonAtCharge,
-                    specifiedType: const FullType(String)));
+                    specifiedType: const FullType(int)));
         }
         return result;
     }
@@ -167,7 +167,7 @@ class _$FinancialInfoResponseSerializer implements StructuredSerializer<Financia
                     break;
                 case r'total_person_at_charge':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
+                        specifiedType: const FullType(int)) as int;
                     result.totalPersonAtCharge = valueDes;
                     break;
             }

@@ -47,7 +47,7 @@ void main() {
     //
     // Return String
     //
-    //Future<String> postAuthRegister({ RegisterModel body }) async
+    //Future<RegisterResponse> postAuthRegister({ RegisterModel body }) async
     test('test postAuthRegister', () async {
       // TODO
     });

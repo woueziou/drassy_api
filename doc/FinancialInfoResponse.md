@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **matrimonialStatus** | **String** |  | [optional] 
 **situation** | [**FinancialSituationResponse**](FinancialSituationResponse.md) |  | [optional] 
 **businessLine** | [**BusinessLine**](BusinessLine.md) |  | [optional] 
-**totalPersonAtCharge** | **String** |  | [optional] 
+**totalPersonAtCharge** | **int** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

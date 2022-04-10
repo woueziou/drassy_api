@@ -17,7 +17,7 @@ void main() {
       // TODO
     });
 
-    // Investment investment
+    // InvestOptionResponse investment
     test('to test the property `investment`', () async {
       // TODO
     });

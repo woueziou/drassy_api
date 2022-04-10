@@ -22,7 +22,7 @@ class _$FinancialInfoResponse extends FinancialInfoResponse {
   @override
   final BusinessLine? businessLine;
   @override
-  final String? totalPersonAtCharge;
+  final int? totalPersonAtCharge;
 
   factory _$FinancialInfoResponse(
           [void Function(FinancialInfoResponseBuilder)? updates]) =>
@@ -131,9 +131,9 @@ class FinancialInfoResponseBuilder
   set businessLine(BusinessLineBuilder? businessLine) =>
       _$this._businessLine = businessLine;
 
-  String? _totalPersonAtCharge;
-  String? get totalPersonAtCharge => _$this._totalPersonAtCharge;
-  set totalPersonAtCharge(String? totalPersonAtCharge) =>
+  int? _totalPersonAtCharge;
+  int? get totalPersonAtCharge => _$this._totalPersonAtCharge;
+  set totalPersonAtCharge(int? totalPersonAtCharge) =>
       _$this._totalPersonAtCharge = totalPersonAtCharge;
 
   FinancialInfoResponseBuilder() {

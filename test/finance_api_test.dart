@@ -16,7 +16,7 @@ void main() {
 
     // Update finance
     //
-    //Future<String> patchFinancialUpdate({ FinancialInfoResponseUpdateRequest body }) async
+    //Future<FinancialInfoResponse> patchFinancialUpdate({ FinancialInfoResponseUpdateRequest body }) async
     test('test patchFinancialUpdate', () async {
       // TODO
     });

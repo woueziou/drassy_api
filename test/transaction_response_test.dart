@@ -22,7 +22,7 @@ void main() {
       // TODO
     });
 
-    // TypeTransaction typeTransaction
+    // TransactionType typeTransaction
     test('to test the property `typeTransaction`', () async {
       // TODO
     });

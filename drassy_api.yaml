@@ -680,7 +680,7 @@ definitions:
       businessLine:
         $ref: "#/definitions/BusinessLine"
       total_person_at_charge:
-        type: string
+        type: integer
   InvestOptionResponse:
     type: object
     properties:

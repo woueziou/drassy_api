@@ -28,11 +28,20 @@ void main() {
       // TODO
     });
 
+    // profession List 
+    //
+    // Return profession list
+    //
+    //Future<BuiltList<BusinessLineResponse>> getParamsBusinesslineList() async
+    test('test getParamsBusinesslineList', () async {
+      // TODO
+    });
+
     //  list Transaction Type
     //
     // Return Transaction Type list
     //
-    //Future<BuiltList<Situation>> getParamsFinancialsituation() async
+    //Future<BuiltList<String>> getParamsFinancialsituation() async
     test('test getParamsFinancialsituation', () async {
       // TODO
     });
@@ -41,7 +50,7 @@ void main() {
     //
     // Return Country list
     //
-    //Future<BuiltList<CountryResponse>> getParamsListcountries() async
+    //Future<BuiltList<String>> getParamsListcountries() async
     test('test getParamsListcountries', () async {
       // TODO
     });
@@ -86,7 +95,7 @@ void main() {
     //
     // Return Transaction Type list
     //
-    //Future<BuiltList<TransactionType>> getParamsTransactiontype() async
+    //Future<BuiltList<String>> getParamsTransactiontype() async
     test('test getParamsTransactiontype', () async {
       // TODO
     });
@@ -95,28 +104,35 @@ void main() {
     //
     // Return Wages list
     //
-    //Future<BuiltList<Situation>> getParamsWagesList() async
+    //Future<BuiltList<FinancialSituationResponse>> getParamsWagesList() async
     test('test getParamsWagesList', () async {
       // TODO
     });
 
     // Create profession
     //
-    //Future<String> postParamsProfessionNew({ RevenueSchema body }) async
+    //Future<BusinessLineResponse> postParamsBusinesslineNew({ BusinessLineRequest body }) async
+    test('test postParamsBusinesslineNew', () async {
+      // TODO
+    });
+
+    // Create profession
+    //
+    //Future<String> postParamsProfessionNew({ BusinessLineRequest body }) async
     test('test postParamsProfessionNew', () async {
       // TODO
     });
 
     // Create Revenue
     //
-    //Future<String> postParamsRevenueNew({ RevenueSchema body }) async
+    //Future<String> postParamsRevenueNew({ BusinessLineRequest body }) async
     test('test postParamsRevenueNew', () async {
       // TODO
     });
 
     // Create wages
     //
-    //Future<String> postParamsWagesNew({ RevenueSchema body }) async
+    //Future<String> postParamsWagesNew({ BusinessLineRequest body }) async
     test('test postParamsWagesNew', () async {
       // TODO
     });
