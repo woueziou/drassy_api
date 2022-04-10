@@ -550,7 +550,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postParamsBusinesslineNew**
-> Situation postParamsBusinesslineNew(body)
+> BusinessLineResponse postParamsBusinesslineNew(body)
 
 Create profession
 
@@ -581,7 +581,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Situation**](Situation.md)
+[**BusinessLineResponse**](BusinessLineResponse.md)
 
 ### Authorization
 

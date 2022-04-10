@@ -106,6 +106,8 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [BusinessLineRequest](doc\BusinessLineRequest.md)
+ - [BusinessLineResponse](doc\BusinessLineResponse.md)
+ - [Country](doc\Country.md)
  - [CountryResponse](doc\CountryResponse.md)
  - [CreateCountrySchema](doc\CreateCountrySchema.md)
  - [CreateCredentialsRequest](doc\CreateCredentialsRequest.md)
@@ -123,11 +125,11 @@ Class | Method | HTTP request | Description
  - [NewPasswordModel](doc\NewPasswordModel.md)
  - [PhoneVerificationModel](doc\PhoneVerificationModel.md)
  - [RegisterModel](doc\RegisterModel.md)
+ - [RegisterResponse](doc\RegisterResponse.md)
  - [RenewToken](doc\RenewToken.md)
  - [Situation](doc\Situation.md)
  - [TransactionResponse](doc\TransactionResponse.md)
  - [TransactionType](doc\TransactionType.md)
- - [TypeTransaction](doc\TypeTransaction.md)
  - [UpdateTransactionSchema](doc\UpdateTransactionSchema.md)
  - [UserInfoResponse](doc\UserInfoResponse.md)
 

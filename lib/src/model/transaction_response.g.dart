@@ -14,7 +14,7 @@ class _$TransactionResponse extends TransactionResponse {
   @override
   final String? note;
   @override
-  final TypeTransaction? typeTransaction;
+  final TransactionType? typeTransaction;
 
   factory _$TransactionResponse(
           [void Function(TransactionResponseBuilder)? updates]) =>
@@ -77,10 +77,10 @@ class TransactionResponseBuilder
   String? get note => _$this._note;
   set note(String? note) => _$this._note = note;
 
-  TypeTransactionBuilder? _typeTransaction;
-  TypeTransactionBuilder get typeTransaction =>
-      _$this._typeTransaction ??= new TypeTransactionBuilder();
-  set typeTransaction(TypeTransactionBuilder? typeTransaction) =>
+  TransactionTypeBuilder? _typeTransaction;
+  TransactionTypeBuilder get typeTransaction =>
+      _$this._typeTransaction ??= new TransactionTypeBuilder();
+  set typeTransaction(TransactionTypeBuilder? typeTransaction) =>
       _$this._typeTransaction = typeTransaction;
 
   TransactionResponseBuilder() {

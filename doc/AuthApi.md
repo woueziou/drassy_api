@@ -202,7 +202,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postAuthRegister**
-> String postAuthRegister(body)
+> RegisterResponse postAuthRegister(body)
 
 Create user
 
@@ -235,7 +235,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**String**
+[**RegisterResponse**](RegisterResponse.md)
 
 ### Authorization
 

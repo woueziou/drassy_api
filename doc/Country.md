@@ -1,4 +1,4 @@
-# drassy_api.model.TransactionResponse
+# drassy_api.model.Country
 
 ## Load the model package
 ```dart
@@ -9,9 +9,9 @@ import 'package:drassy_api/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | [optional] 
-**amount** | **String** |  | [optional] 
-**note** | **String** |  | [optional] 
-**typeTransaction** | [**TransactionType**](TransactionType.md) |  | [optional] 
+**name** | **String** |  | [optional] 
+**code** | **String** |  | [optional] 
+**callCode** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

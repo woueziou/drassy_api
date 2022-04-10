@@ -11,6 +11,7 @@ import 'package:drassy_api/src/model/create_credentials_request.dart';
 import 'package:drassy_api/src/model/login_model.dart';
 import 'package:drassy_api/src/model/new_password_model.dart';
 import 'package:drassy_api/src/model/register_model.dart';
+import 'package:drassy_api/src/model/register_response.dart';
 import 'package:drassy_api/src/model/renew_token.dart';
 import 'package:drassy_api/src/model/user_info_response.dart';
 
@@ -398,9 +399,9 @@ class AuthApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [String] as data
+  /// Returns a [Future] containing a [Response] with a [RegisterResponse] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<String>> postAuthRegister({ 
+  Future<Response<RegisterResponse>> postAuthRegister({ 
     RegisterModel? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -455,10 +456,14 @@ class AuthApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    String _responseData;
+    RegisterResponse _responseData;
 
     try {
-      _responseData = _response.data as String;
+      const _responseType = FullType(RegisterResponse);
+      _responseData = _serializers.deserialize(
+        _response.data!,
+        specifiedType: _responseType,
+      ) as RegisterResponse;
 
     } catch (error, stackTrace) {
       throw DioError(
@@ -469,7 +474,7 @@ class AuthApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<String>(
+    return Response<RegisterResponse>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

@@ -2,7 +2,7 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
-import 'package:drassy_api/src/model/type_transaction.dart';
+import 'package:drassy_api/src/model/transaction_type.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -26,7 +26,7 @@ abstract class TransactionResponse implements Built<TransactionResponse, Transac
     String? get note;
 
     @BuiltValueField(wireName: r'type_transaction')
-    TypeTransaction? get typeTransaction;
+    TransactionType? get typeTransaction;
 
     TransactionResponse._();
 
@@ -72,7 +72,7 @@ class _$TransactionResponseSerializer implements StructuredSerializer<Transactio
             result
                 ..add(r'type_transaction')
                 ..add(serializers.serialize(object.typeTransaction,
-                    specifiedType: const FullType(TypeTransaction)));
+                    specifiedType: const FullType(TransactionType)));
         }
         return result;
     }
@@ -106,7 +106,7 @@ class _$TransactionResponseSerializer implements StructuredSerializer<Transactio
                     break;
                 case r'type_transaction':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(TypeTransaction)) as TypeTransaction;
+                        specifiedType: const FullType(TransactionType)) as TransactionType;
                     result.typeTransaction.replace(valueDes);
                     break;
             }

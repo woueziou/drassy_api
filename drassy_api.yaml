@@ -141,7 +141,7 @@ paths:
       responses:
         "200":
           schema:
-            $ref: "#/definitions/Model1"
+            $ref: "#/definitions/TransactionResponseList"
           description: Successful
   /transaction/period:
     get:
@@ -160,7 +160,7 @@ paths:
       responses:
         "200":
           schema:
-            $ref: "#/definitions/Model1"
+            $ref: "#/definitions/TransactionResponseList"
           description: Successful
   /transaction/search:
     get:
@@ -172,7 +172,7 @@ paths:
       responses:
         "200":
           schema:
-            $ref: "#/definitions/Model1"
+            $ref: "#/definitions/TransactionResponseList"
           description: Successful
   /params/businessline/list:
     get:
@@ -220,7 +220,7 @@ paths:
       responses:
         "200":
           schema:
-            $ref: "#/definitions/Model2"
+            $ref: "#/definitions/WagesResponseList"
           description: Successful
   /auth/changepassword:
     post:
@@ -252,7 +252,7 @@ paths:
       tags:
         - Auth
       responses:
-        default:
+        "200":
           schema:
             type: string
           description: Successful
@@ -286,9 +286,9 @@ paths:
       tags:
         - Auth
       responses:
-        default:
+        "200":
           schema:
-            type: string
+            $ref: "#/definitions/RegisterResponse"
           description: Successful
   /auth/renew:
     post:
@@ -420,7 +420,7 @@ paths:
       responses:
         "200":
           schema:
-            $ref: "#/definitions/situation"
+            $ref: "#/definitions/BusinessLineResponse"
           description: Successful
   /params/profession/new:
     post:
@@ -695,7 +695,7 @@ definitions:
       single: true
     items:
       type: string
-  type_transaction:
+  TransactionType:
     type: object
     properties:
       id:
@@ -720,8 +720,8 @@ definitions:
       note:
         type: string
       type_transaction:
-        $ref: "#/definitions/type_transaction"
-  Model1:
+        $ref: "#/definitions/TransactionType"
+  TransactionResponseList:
     type: array
     items:
       $ref: "#/definitions/TransactionResponse"
@@ -731,7 +731,7 @@ definitions:
       single: true
     items:
       $ref: "#/definitions/situation"
-  Model2:
+  WagesResponseList:
     type: array
     items:
       $ref: "#/definitions/situation"
@@ -777,6 +777,34 @@ definitions:
         enum:
           - M
           - F
+  Country:
+    type: object
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+      code:
+        type: string
+      call_code:
+        type: string
+  RegisterResponse:
+    type: object
+    properties:
+      id:
+        type: string
+      full_name:
+        type: string
+      email:
+        type: string
+      phone:
+        type: string
+      sex:
+        type: string
+      scope:
+        type: string
+      Country:
+        $ref: "#/definitions/Country"
   Renew Token:
     type: object
     properties:
@@ -862,6 +890,13 @@ definitions:
   BusinessLineRequest:
     type: object
     properties:
+      name:
+        type: string
+  BusinessLineResponse:
+    type: object
+    properties:
+      id:
+        type: number
       name:
         type: string
   FinancialInfoResponseUpdateRequest:

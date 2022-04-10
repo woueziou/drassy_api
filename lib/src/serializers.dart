@@ -13,6 +13,8 @@ import 'package:drassy_api/src/date_serializer.dart';
 import 'package:drassy_api/src/model/date.dart';
 
 import 'package:drassy_api/src/model/business_line_request.dart';
+import 'package:drassy_api/src/model/business_line_response.dart';
+import 'package:drassy_api/src/model/country.dart';
 import 'package:drassy_api/src/model/country_response.dart';
 import 'package:drassy_api/src/model/create_country_schema.dart';
 import 'package:drassy_api/src/model/create_credentials_request.dart';
@@ -30,11 +32,11 @@ import 'package:drassy_api/src/model/login_model.dart';
 import 'package:drassy_api/src/model/new_password_model.dart';
 import 'package:drassy_api/src/model/phone_verification_model.dart';
 import 'package:drassy_api/src/model/register_model.dart';
+import 'package:drassy_api/src/model/register_response.dart';
 import 'package:drassy_api/src/model/renew_token.dart';
 import 'package:drassy_api/src/model/situation.dart';
 import 'package:drassy_api/src/model/transaction_response.dart';
 import 'package:drassy_api/src/model/transaction_type.dart';
-import 'package:drassy_api/src/model/type_transaction.dart';
 import 'package:drassy_api/src/model/update_transaction_schema.dart';
 import 'package:drassy_api/src/model/user_info_response.dart';
 
@@ -42,6 +44,8 @@ part 'serializers.g.dart';
 
 @SerializersFor([
   BusinessLineRequest,
+  BusinessLineResponse,
+  Country,
   CountryResponse,
   CreateCountrySchema,
   CreateCredentialsRequest,
@@ -59,11 +63,11 @@ part 'serializers.g.dart';
   NewPasswordModel,
   PhoneVerificationModel,
   RegisterModel,
+  RegisterResponse,
   RenewToken,
   Situation,
   TransactionResponse,
   TransactionType,
-  TypeTransaction,
   UpdateTransactionSchema,
   UserInfoResponse,
 ])

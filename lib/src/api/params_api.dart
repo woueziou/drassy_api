@@ -9,6 +9,7 @@ import 'package:dio/dio.dart';
 
 import 'package:built_collection/built_collection.dart';
 import 'package:drassy_api/src/model/business_line_request.dart';
+import 'package:drassy_api/src/model/business_line_response.dart';
 import 'package:drassy_api/src/model/situation.dart';
 
 class ParamsApi {
@@ -965,9 +966,9 @@ class ParamsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [Situation] as data
+  /// Returns a [Future] containing a [Response] with a [BusinessLineResponse] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<Situation>> postParamsBusinesslineNew({ 
+  Future<Response<BusinessLineResponse>> postParamsBusinesslineNew({ 
     BusinessLineRequest? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -1022,14 +1023,14 @@ class ParamsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Situation _responseData;
+    BusinessLineResponse _responseData;
 
     try {
-      const _responseType = FullType(Situation);
+      const _responseType = FullType(BusinessLineResponse);
       _responseData = _serializers.deserialize(
         _response.data!,
         specifiedType: _responseType,
-      ) as Situation;
+      ) as BusinessLineResponse;
 
     } catch (error, stackTrace) {
       throw DioError(
@@ -1040,7 +1041,7 @@ class ParamsApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<Situation>(
+    return Response<BusinessLineResponse>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
