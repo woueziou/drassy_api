@@ -2,7 +2,7 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
-import 'package:drassy_api/src/model/investment.dart';
+import 'package:drassy_api/src/model/invest_option_response.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -22,7 +22,7 @@ abstract class InvestSubscribeResponse implements Built<InvestSubscribeResponse,
     String? get comment;
 
     @BuiltValueField(wireName: r'investment')
-    Investment? get investment;
+    InvestOptionResponse? get investment;
 
     InvestSubscribeResponse._();
 
@@ -62,7 +62,7 @@ class _$InvestSubscribeResponseSerializer implements StructuredSerializer<Invest
             result
                 ..add(r'investment')
                 ..add(serializers.serialize(object.investment,
-                    specifiedType: const FullType(Investment)));
+                    specifiedType: const FullType(InvestOptionResponse)));
         }
         return result;
     }
@@ -91,7 +91,7 @@ class _$InvestSubscribeResponseSerializer implements StructuredSerializer<Invest
                     break;
                 case r'investment':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(Investment)) as Investment;
+                        specifiedType: const FullType(InvestOptionResponse)) as InvestOptionResponse;
                     result.investment.replace(valueDes);
                     break;
             }

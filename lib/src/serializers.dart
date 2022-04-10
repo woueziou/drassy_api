@@ -23,13 +23,12 @@ import 'package:drassy_api/src/model/create_financial_request.dart';
 import 'package:drassy_api/src/model/create_transaction_schema.dart';
 import 'package:drassy_api/src/model/financial_info_response.dart';
 import 'package:drassy_api/src/model/financial_info_response_update_request.dart';
-import 'package:drassy_api/src/model/financial_situation.dart';
+import 'package:drassy_api/src/model/financial_situation_response.dart';
 import 'package:drassy_api/src/model/fixed_load_model_request.dart';
 import 'package:drassy_api/src/model/fixed_load_response.dart';
 import 'package:drassy_api/src/model/invest_option_response.dart';
 import 'package:drassy_api/src/model/invest_subscribe_model.dart';
 import 'package:drassy_api/src/model/invest_subscribe_response.dart';
-import 'package:drassy_api/src/model/investment.dart';
 import 'package:drassy_api/src/model/login_model.dart';
 import 'package:drassy_api/src/model/new_password_model.dart';
 import 'package:drassy_api/src/model/phone_verification_model.dart';
@@ -55,13 +54,12 @@ part 'serializers.g.dart';
   CreateTransactionSchema,
   FinancialInfoResponse,
   FinancialInfoResponseUpdateRequest,
-  FinancialSituation,
+  FinancialSituationResponse,
   FixedLoadModelRequest,
   FixedLoadResponse,
   InvestOptionResponse,
   InvestSubscribeModel,
   InvestSubscribeResponse,
-  Investment,
   LoginModel,
   NewPasswordModel,
   PhoneVerificationModel,
@@ -87,8 +85,8 @@ Serializers serializers = (_$serializers.toBuilder()
         () => ListBuilder<InvestOptionResponse>(),
       )
       ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(FinancialSituation)]),
-        () => ListBuilder<FinancialSituation>(),
+        const FullType(BuiltList, [FullType(FinancialSituationResponse)]),
+        () => ListBuilder<FinancialSituationResponse>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(FixedLoadResponse)]),

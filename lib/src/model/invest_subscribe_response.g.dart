@@ -12,7 +12,7 @@ class _$InvestSubscribeResponse extends InvestSubscribeResponse {
   @override
   final String? comment;
   @override
-  final Investment? investment;
+  final InvestOptionResponse? investment;
 
   factory _$InvestSubscribeResponse(
           [void Function(InvestSubscribeResponseBuilder)? updates]) =>
@@ -68,10 +68,10 @@ class InvestSubscribeResponseBuilder
   String? get comment => _$this._comment;
   set comment(String? comment) => _$this._comment = comment;
 
-  InvestmentBuilder? _investment;
-  InvestmentBuilder get investment =>
-      _$this._investment ??= new InvestmentBuilder();
-  set investment(InvestmentBuilder? investment) =>
+  InvestOptionResponseBuilder? _investment;
+  InvestOptionResponseBuilder get investment =>
+      _$this._investment ??= new InvestOptionResponseBuilder();
+  set investment(InvestOptionResponseBuilder? investment) =>
       _$this._investment = investment;
 
   InvestSubscribeResponseBuilder() {

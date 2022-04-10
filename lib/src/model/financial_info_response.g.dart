@@ -10,7 +10,7 @@ class _$FinancialInfoResponse extends FinancialInfoResponse {
   @override
   final String? id;
   @override
-  final String? balance;
+  final int? balance;
   @override
   final String? profession;
   @override
@@ -18,9 +18,9 @@ class _$FinancialInfoResponse extends FinancialInfoResponse {
   @override
   final String? matrimonialStatus;
   @override
-  final Situation? situation;
+  final FinancialSituationResponse? situation;
   @override
-  final Situation? businessLine;
+  final BusinessLine? businessLine;
   @override
   final String? totalPersonAtCharge;
 
@@ -101,9 +101,9 @@ class FinancialInfoResponseBuilder
   String? get id => _$this._id;
   set id(String? id) => _$this._id = id;
 
-  String? _balance;
-  String? get balance => _$this._balance;
-  set balance(String? balance) => _$this._balance = balance;
+  int? _balance;
+  int? get balance => _$this._balance;
+  set balance(int? balance) => _$this._balance = balance;
 
   String? _profession;
   String? get profession => _$this._profession;
@@ -119,15 +119,16 @@ class FinancialInfoResponseBuilder
   set matrimonialStatus(String? matrimonialStatus) =>
       _$this._matrimonialStatus = matrimonialStatus;
 
-  SituationBuilder? _situation;
-  SituationBuilder get situation =>
-      _$this._situation ??= new SituationBuilder();
-  set situation(SituationBuilder? situation) => _$this._situation = situation;
+  FinancialSituationResponseBuilder? _situation;
+  FinancialSituationResponseBuilder get situation =>
+      _$this._situation ??= new FinancialSituationResponseBuilder();
+  set situation(FinancialSituationResponseBuilder? situation) =>
+      _$this._situation = situation;
 
-  SituationBuilder? _businessLine;
-  SituationBuilder get businessLine =>
-      _$this._businessLine ??= new SituationBuilder();
-  set businessLine(SituationBuilder? businessLine) =>
+  BusinessLineBuilder? _businessLine;
+  BusinessLineBuilder get businessLine =>
+      _$this._businessLine ??= new BusinessLineBuilder();
+  set businessLine(BusinessLineBuilder? businessLine) =>
       _$this._businessLine = businessLine;
 
   String? _totalPersonAtCharge;

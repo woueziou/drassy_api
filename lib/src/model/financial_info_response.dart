@@ -3,7 +3,7 @@
 //
 
 import 'package:drassy_api/src/model/business_line.dart';
-import 'package:drassy_api/src/model/financial_situation.dart';
+import 'package:drassy_api/src/model/financial_situation_response.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -37,7 +37,7 @@ abstract class FinancialInfoResponse implements Built<FinancialInfoResponse, Fin
     String? get matrimonialStatus;
 
     @BuiltValueField(wireName: r'situation')
-    FinancialSituation? get situation;
+    FinancialSituationResponse? get situation;
 
     @BuiltValueField(wireName: r'businessLine')
     BusinessLine? get businessLine;
@@ -101,7 +101,7 @@ class _$FinancialInfoResponseSerializer implements StructuredSerializer<Financia
             result
                 ..add(r'situation')
                 ..add(serializers.serialize(object.situation,
-                    specifiedType: const FullType(FinancialSituation)));
+                    specifiedType: const FullType(FinancialSituationResponse)));
         }
         if (object.businessLine != null) {
             result
@@ -157,7 +157,7 @@ class _$FinancialInfoResponseSerializer implements StructuredSerializer<Financia
                     break;
                 case r'situation':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(FinancialSituation)) as FinancialSituation;
+                        specifiedType: const FullType(FinancialSituationResponse)) as FinancialSituationResponse;
                     result.situation.replace(valueDes);
                     break;
                 case r'businessLine':

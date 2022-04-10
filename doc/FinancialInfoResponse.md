@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **profession** | **String** |  | [optional] 
 **monthlyRevenue** | **String** |  | [optional] 
 **matrimonialStatus** | **String** |  | [optional] 
-**situation** | [**FinancialSituation**](FinancialSituation.md) |  | [optional] 
+**situation** | [**FinancialSituationResponse**](FinancialSituationResponse.md) |  | [optional] 
 **businessLine** | [**BusinessLine**](BusinessLine.md) |  | [optional] 
 **totalPersonAtCharge** | **String** |  | [optional] 
 

@@ -15,7 +15,7 @@ doc/CreateTransactionSchema.md
 doc/FinanceApi.md
 doc/FinancialInfoResponse.md
 doc/FinancialInfoResponseUpdateRequest.md
-doc/FinancialSituation.md
+doc/FinancialSituationResponse.md
 doc/FixedLoadApi.md
 doc/FixedLoadModelRequest.md
 doc/FixedLoadResponse.md
@@ -23,7 +23,6 @@ doc/InvestApi.md
 doc/InvestOptionResponse.md
 doc/InvestSubscribeModel.md
 doc/InvestSubscribeResponse.md
-doc/Investment.md
 doc/LoginModel.md
 doc/MiscApi.md
 doc/NewPasswordModel.md
@@ -66,13 +65,12 @@ lib/src/model/create_transaction_schema.dart
 lib/src/model/date.dart
 lib/src/model/financial_info_response.dart
 lib/src/model/financial_info_response_update_request.dart
-lib/src/model/financial_situation.dart
+lib/src/model/financial_situation_response.dart
 lib/src/model/fixed_load_model_request.dart
 lib/src/model/fixed_load_response.dart
 lib/src/model/invest_option_response.dart
 lib/src/model/invest_subscribe_model.dart
 lib/src/model/invest_subscribe_response.dart
-lib/src/model/investment.dart
 lib/src/model/login_model.dart
 lib/src/model/new_password_model.dart
 lib/src/model/phone_verification_model.dart
@@ -85,5 +83,3 @@ lib/src/model/update_transaction_schema.dart
 lib/src/model/user_info_response.dart
 lib/src/serializers.dart
 pubspec.yaml
-test/business_line_test.dart
-test/financial_situation_test.dart
