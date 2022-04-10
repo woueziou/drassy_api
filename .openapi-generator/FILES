@@ -2,6 +2,7 @@
 README.md
 analysis_options.yaml
 doc/AuthApi.md
+doc/BusinessLine.md
 doc/BusinessLineRequest.md
 doc/BusinessLineResponse.md
 doc/Country.md
@@ -14,6 +15,7 @@ doc/CreateTransactionSchema.md
 doc/FinanceApi.md
 doc/FinancialInfoResponse.md
 doc/FinancialInfoResponseUpdateRequest.md
+doc/FinancialSituation.md
 doc/FixedLoadApi.md
 doc/FixedLoadModelRequest.md
 doc/FixedLoadResponse.md
@@ -30,7 +32,6 @@ doc/PhoneVerificationModel.md
 doc/RegisterModel.md
 doc/RegisterResponse.md
 doc/RenewToken.md
-doc/Situation.md
 doc/TransactionApi.md
 doc/TransactionResponse.md
 doc/TransactionType.md
@@ -53,6 +54,7 @@ lib/src/auth/basic_auth.dart
 lib/src/auth/bearer_auth.dart
 lib/src/auth/oauth.dart
 lib/src/date_serializer.dart
+lib/src/model/business_line.dart
 lib/src/model/business_line_request.dart
 lib/src/model/business_line_response.dart
 lib/src/model/country.dart
@@ -64,6 +66,7 @@ lib/src/model/create_transaction_schema.dart
 lib/src/model/date.dart
 lib/src/model/financial_info_response.dart
 lib/src/model/financial_info_response_update_request.dart
+lib/src/model/financial_situation.dart
 lib/src/model/fixed_load_model_request.dart
 lib/src/model/fixed_load_response.dart
 lib/src/model/invest_option_response.dart
@@ -76,10 +79,11 @@ lib/src/model/phone_verification_model.dart
 lib/src/model/register_model.dart
 lib/src/model/register_response.dart
 lib/src/model/renew_token.dart
-lib/src/model/situation.dart
 lib/src/model/transaction_response.dart
 lib/src/model/transaction_type.dart
 lib/src/model/update_transaction_schema.dart
 lib/src/model/user_info_response.dart
 lib/src/serializers.dart
 pubspec.yaml
+test/business_line_test.dart
+test/financial_situation_test.dart

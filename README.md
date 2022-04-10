@@ -105,6 +105,7 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
+ - [BusinessLine](doc\BusinessLine.md)
  - [BusinessLineRequest](doc\BusinessLineRequest.md)
  - [BusinessLineResponse](doc\BusinessLineResponse.md)
  - [Country](doc\Country.md)
@@ -115,6 +116,7 @@ Class | Method | HTTP request | Description
  - [CreateTransactionSchema](doc\CreateTransactionSchema.md)
  - [FinancialInfoResponse](doc\FinancialInfoResponse.md)
  - [FinancialInfoResponseUpdateRequest](doc\FinancialInfoResponseUpdateRequest.md)
+ - [FinancialSituation](doc\FinancialSituation.md)
  - [FixedLoadModelRequest](doc\FixedLoadModelRequest.md)
  - [FixedLoadResponse](doc\FixedLoadResponse.md)
  - [InvestOptionResponse](doc\InvestOptionResponse.md)
@@ -127,7 +129,6 @@ Class | Method | HTTP request | Description
  - [RegisterModel](doc\RegisterModel.md)
  - [RegisterResponse](doc\RegisterResponse.md)
  - [RenewToken](doc\RenewToken.md)
- - [Situation](doc\Situation.md)
  - [TransactionResponse](doc\TransactionResponse.md)
  - [TransactionType](doc\TransactionType.md)
  - [UpdateTransactionSchema](doc\UpdateTransactionSchema.md)

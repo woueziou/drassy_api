@@ -507,7 +507,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getParamsWagesList**
-> BuiltList<Situation> getParamsWagesList()
+> BuiltList<FinancialSituation> getParamsWagesList()
 
 Wages List 
 
@@ -536,7 +536,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**BuiltList&lt;Situation&gt;**](Situation.md)
+[**BuiltList&lt;FinancialSituation&gt;**](FinancialSituation.md)
 
 ### Authorization
 

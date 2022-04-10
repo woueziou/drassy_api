@@ -12,6 +12,7 @@ import 'package:built_value/iso_8601_date_time_serializer.dart';
 import 'package:drassy_api/src/date_serializer.dart';
 import 'package:drassy_api/src/model/date.dart';
 
+import 'package:drassy_api/src/model/business_line.dart';
 import 'package:drassy_api/src/model/business_line_request.dart';
 import 'package:drassy_api/src/model/business_line_response.dart';
 import 'package:drassy_api/src/model/country.dart';
@@ -22,6 +23,7 @@ import 'package:drassy_api/src/model/create_financial_request.dart';
 import 'package:drassy_api/src/model/create_transaction_schema.dart';
 import 'package:drassy_api/src/model/financial_info_response.dart';
 import 'package:drassy_api/src/model/financial_info_response_update_request.dart';
+import 'package:drassy_api/src/model/financial_situation.dart';
 import 'package:drassy_api/src/model/fixed_load_model_request.dart';
 import 'package:drassy_api/src/model/fixed_load_response.dart';
 import 'package:drassy_api/src/model/invest_option_response.dart';
@@ -34,7 +36,6 @@ import 'package:drassy_api/src/model/phone_verification_model.dart';
 import 'package:drassy_api/src/model/register_model.dart';
 import 'package:drassy_api/src/model/register_response.dart';
 import 'package:drassy_api/src/model/renew_token.dart';
-import 'package:drassy_api/src/model/situation.dart';
 import 'package:drassy_api/src/model/transaction_response.dart';
 import 'package:drassy_api/src/model/transaction_type.dart';
 import 'package:drassy_api/src/model/update_transaction_schema.dart';
@@ -43,6 +44,7 @@ import 'package:drassy_api/src/model/user_info_response.dart';
 part 'serializers.g.dart';
 
 @SerializersFor([
+  BusinessLine,
   BusinessLineRequest,
   BusinessLineResponse,
   Country,
@@ -53,6 +55,7 @@ part 'serializers.g.dart';
   CreateTransactionSchema,
   FinancialInfoResponse,
   FinancialInfoResponseUpdateRequest,
+  FinancialSituation,
   FixedLoadModelRequest,
   FixedLoadResponse,
   InvestOptionResponse,
@@ -65,7 +68,6 @@ part 'serializers.g.dart';
   RegisterModel,
   RegisterResponse,
   RenewToken,
-  Situation,
   TransactionResponse,
   TransactionType,
   UpdateTransactionSchema,
@@ -85,12 +87,12 @@ Serializers serializers = (_$serializers.toBuilder()
         () => ListBuilder<InvestOptionResponse>(),
       )
       ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(FixedLoadResponse)]),
-        () => ListBuilder<FixedLoadResponse>(),
+        const FullType(BuiltList, [FullType(FinancialSituation)]),
+        () => ListBuilder<FinancialSituation>(),
       )
       ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Situation)]),
-        () => ListBuilder<Situation>(),
+        const FullType(BuiltList, [FullType(FixedLoadResponse)]),
+        () => ListBuilder<FixedLoadResponse>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(String)]),

@@ -2,7 +2,7 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
-import 'package:drassy_api/src/model/situation.dart';
+import 'package:drassy_api/src/model/financial_situation.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -14,7 +14,7 @@ part 'investment.g.dart';
 /// * [select] 
 abstract class Investment implements Built<Investment, InvestmentBuilder> {
     @BuiltValueField(wireName: r'select')
-    Situation? get select;
+    FinancialSituation? get select;
 
     Investment._();
 
@@ -42,7 +42,7 @@ class _$InvestmentSerializer implements StructuredSerializer<Investment> {
             result
                 ..add(r'select')
                 ..add(serializers.serialize(object.select,
-                    specifiedType: const FullType(Situation)));
+                    specifiedType: const FullType(FinancialSituation)));
         }
         return result;
     }
@@ -61,7 +61,7 @@ class _$InvestmentSerializer implements StructuredSerializer<Investment> {
             switch (key) {
                 case r'select':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(Situation)) as Situation;
+                        specifiedType: const FullType(FinancialSituation)) as FinancialSituation;
                     result.select.replace(valueDes);
                     break;
             }

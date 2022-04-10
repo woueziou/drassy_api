@@ -482,9 +482,9 @@ paths:
       tags:
         - Finance
       responses:
-        default:
+        "200":
           schema:
-            type: string
+            $ref: "#/definitions/FinancialInfoResponse"
           description: Successful
   /fixedload/{id}:
     delete:
@@ -648,11 +648,18 @@ definitions:
         type: string
       Country:
         $ref: "#/definitions/CountryResponse"
-  situation:
+  FinancialSituation:
     type: object
     properties:
       id:
         type: string
+      name:
+        type: string
+  BusinessLine:
+    type: object
+    properties:
+      id:
+        type: integer
       name:
         type: string
   FinancialInfoResponse:
@@ -661,7 +668,7 @@ definitions:
       id:
         type: string
       balance:
-        type: string
+        type: integer
       profession:
         type: string
       monthly_revenue:
@@ -669,9 +676,9 @@ definitions:
       matrimonial_status:
         type: string
       situation:
-        $ref: "#/definitions/situation"
+        $ref: "#/definitions/FinancialSituation"
       businessLine:
-        $ref: "#/definitions/situation"
+        $ref: "#/definitions/BusinessLine"
       total_person_at_charge:
         type: string
   InvestOptionResponse:
@@ -741,7 +748,7 @@ definitions:
   WagesResponseList:
     type: array
     items:
-      $ref: "#/definitions/situation"
+      $ref: "#/definitions/FinancialSituation"
   NewPasswordModel:
     type: object
     properties:
@@ -866,7 +873,7 @@ definitions:
     type: object
     properties:
       select:
-        $ref: "#/definitions/situation"
+        $ref: "#/definitions/FinancialSituation"
   InvestSubscribeResponse:
     type: object
     properties:

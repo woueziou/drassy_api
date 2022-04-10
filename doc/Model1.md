@@ -1,4 +1,4 @@
-# drassy_api.model.FinancialInfoResponse
+# drassy_api.model.Model1
 
 ## Load the model package
 ```dart
@@ -9,12 +9,12 @@ import 'package:drassy_api/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | [optional] 
-**balance** | **int** |  | [optional] 
+**balance** | **String** |  | [optional] 
 **profession** | **String** |  | [optional] 
 **monthlyRevenue** | **String** |  | [optional] 
 **matrimonialStatus** | **String** |  | [optional] 
-**situation** | [**FinancialSituation**](FinancialSituation.md) |  | [optional] 
-**businessLine** | [**BusinessLine**](BusinessLine.md) |  | [optional] 
+**situation** | [**FinancialSituationResponse**](FinancialSituationResponse.md) |  | [optional] 
+**businessLine** | [**FinancialSituationResponse**](FinancialSituationResponse.md) |  | [optional] 
 **totalPersonAtCharge** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

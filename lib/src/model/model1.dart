@@ -2,14 +2,13 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
-import 'package:drassy_api/src/model/business_line.dart';
-import 'package:drassy_api/src/model/financial_situation.dart';
+import 'package:drassy_api/src/model/financial_situation_response.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'financial_info_response.g.dart';
+part 'model1.g.dart';
 
-/// FinancialInfoResponse
+/// Model1
 ///
 /// Properties:
 /// * [id] 
@@ -20,12 +19,12 @@ part 'financial_info_response.g.dart';
 /// * [situation] 
 /// * [businessLine] 
 /// * [totalPersonAtCharge] 
-abstract class FinancialInfoResponse implements Built<FinancialInfoResponse, FinancialInfoResponseBuilder> {
+abstract class Model1 implements Built<Model1, Model1Builder> {
     @BuiltValueField(wireName: r'id')
     String? get id;
 
     @BuiltValueField(wireName: r'balance')
-    int? get balance;
+    String? get balance;
 
     @BuiltValueField(wireName: r'profession')
     String? get profession;
@@ -37,34 +36,34 @@ abstract class FinancialInfoResponse implements Built<FinancialInfoResponse, Fin
     String? get matrimonialStatus;
 
     @BuiltValueField(wireName: r'situation')
-    FinancialSituation? get situation;
+    FinancialSituationResponse? get situation;
 
     @BuiltValueField(wireName: r'businessLine')
-    BusinessLine? get businessLine;
+    FinancialSituationResponse? get businessLine;
 
     @BuiltValueField(wireName: r'total_person_at_charge')
     String? get totalPersonAtCharge;
 
-    FinancialInfoResponse._();
+    Model1._();
 
     @BuiltValueHook(initializeBuilder: true)
-    static void _defaults(FinancialInfoResponseBuilder b) => b;
+    static void _defaults(Model1Builder b) => b;
 
-    factory FinancialInfoResponse([void updates(FinancialInfoResponseBuilder b)]) = _$FinancialInfoResponse;
+    factory Model1([void updates(Model1Builder b)]) = _$Model1;
 
     @BuiltValueSerializer(custom: true)
-    static Serializer<FinancialInfoResponse> get serializer => _$FinancialInfoResponseSerializer();
+    static Serializer<Model1> get serializer => _$Model1Serializer();
 }
 
-class _$FinancialInfoResponseSerializer implements StructuredSerializer<FinancialInfoResponse> {
+class _$Model1Serializer implements StructuredSerializer<Model1> {
     @override
-    final Iterable<Type> types = const [FinancialInfoResponse, _$FinancialInfoResponse];
+    final Iterable<Type> types = const [Model1, _$Model1];
 
     @override
-    final String wireName = r'FinancialInfoResponse';
+    final String wireName = r'Model1';
 
     @override
-    Iterable<Object?> serialize(Serializers serializers, FinancialInfoResponse object,
+    Iterable<Object?> serialize(Serializers serializers, Model1 object,
         {FullType specifiedType = FullType.unspecified}) {
         final result = <Object?>[];
         if (object.id != null) {
@@ -77,7 +76,7 @@ class _$FinancialInfoResponseSerializer implements StructuredSerializer<Financia
             result
                 ..add(r'balance')
                 ..add(serializers.serialize(object.balance,
-                    specifiedType: const FullType(int)));
+                    specifiedType: const FullType(String)));
         }
         if (object.profession != null) {
             result
@@ -101,13 +100,13 @@ class _$FinancialInfoResponseSerializer implements StructuredSerializer<Financia
             result
                 ..add(r'situation')
                 ..add(serializers.serialize(object.situation,
-                    specifiedType: const FullType(FinancialSituation)));
+                    specifiedType: const FullType(FinancialSituationResponse)));
         }
         if (object.businessLine != null) {
             result
                 ..add(r'businessLine')
                 ..add(serializers.serialize(object.businessLine,
-                    specifiedType: const FullType(BusinessLine)));
+                    specifiedType: const FullType(FinancialSituationResponse)));
         }
         if (object.totalPersonAtCharge != null) {
             result
@@ -119,9 +118,9 @@ class _$FinancialInfoResponseSerializer implements StructuredSerializer<Financia
     }
 
     @override
-    FinancialInfoResponse deserialize(Serializers serializers, Iterable<Object?> serialized,
+    Model1 deserialize(Serializers serializers, Iterable<Object?> serialized,
         {FullType specifiedType = FullType.unspecified}) {
-        final result = FinancialInfoResponseBuilder();
+        final result = Model1Builder();
 
         final iterator = serialized.iterator;
         while (iterator.moveNext()) {
@@ -137,7 +136,7 @@ class _$FinancialInfoResponseSerializer implements StructuredSerializer<Financia
                     break;
                 case r'balance':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(int)) as int;
+                        specifiedType: const FullType(String)) as String;
                     result.balance = valueDes;
                     break;
                 case r'profession':
@@ -157,12 +156,12 @@ class _$FinancialInfoResponseSerializer implements StructuredSerializer<Financia
                     break;
                 case r'situation':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(FinancialSituation)) as FinancialSituation;
+                        specifiedType: const FullType(FinancialSituationResponse)) as FinancialSituationResponse;
                     result.situation.replace(valueDes);
                     break;
                 case r'businessLine':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(BusinessLine)) as BusinessLine;
+                        specifiedType: const FullType(FinancialSituationResponse)) as FinancialSituationResponse;
                     result.businessLine.replace(valueDes);
                     break;
                 case r'total_person_at_charge':

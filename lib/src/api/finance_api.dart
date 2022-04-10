@@ -110,9 +110,9 @@ class FinanceApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [String] as data
+  /// Returns a [Future] containing a [Response] with a [FinancialInfoResponse] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<String>> patchFinancialUpdate({ 
+  Future<Response<FinancialInfoResponse>> patchFinancialUpdate({ 
     FinancialInfoResponseUpdateRequest? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -167,10 +167,14 @@ class FinanceApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    String _responseData;
+    FinancialInfoResponse _responseData;
 
     try {
-      _responseData = _response.data as String;
+      const _responseType = FullType(FinancialInfoResponse);
+      _responseData = _serializers.deserialize(
+        _response.data!,
+        specifiedType: _responseType,
+      ) as FinancialInfoResponse;
 
     } catch (error, stackTrace) {
       throw DioError(
@@ -181,7 +185,7 @@ class FinanceApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<String>(
+    return Response<FinancialInfoResponse>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

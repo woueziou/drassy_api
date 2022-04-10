@@ -10,7 +10,7 @@ import 'package:dio/dio.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:drassy_api/src/model/business_line_request.dart';
 import 'package:drassy_api/src/model/business_line_response.dart';
-import 'package:drassy_api/src/model/situation.dart';
+import 'package:drassy_api/src/model/financial_situation.dart';
 
 class ParamsApi {
 
@@ -886,9 +886,9 @@ class ParamsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<Situation>] as data
+  /// Returns a [Future] containing a [Response] with a [BuiltList<FinancialSituation>] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<BuiltList<Situation>>> getParamsWagesList({ 
+  Future<Response<BuiltList<FinancialSituation>>> getParamsWagesList({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -924,14 +924,14 @@ class ParamsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<Situation> _responseData;
+    BuiltList<FinancialSituation> _responseData;
 
     try {
-      const _responseType = FullType(BuiltList, [FullType(Situation)]);
+      const _responseType = FullType(BuiltList, [FullType(FinancialSituation)]);
       _responseData = _serializers.deserialize(
         _response.data!,
         specifiedType: _responseType,
-      ) as BuiltList<Situation>;
+      ) as BuiltList<FinancialSituation>;
 
     } catch (error, stackTrace) {
       throw DioError(
@@ -942,7 +942,7 @@ class ParamsApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<BuiltList<Situation>>(
+    return Response<BuiltList<FinancialSituation>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
