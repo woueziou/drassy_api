@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**deleteParamsProfessionDeleteId**](ParamsApi.md#deleteparamsprofessiondeleteid) | **DELETE** /params/profession/delete/{id} | Create Revenue
 [**deleteParamsRevenueDeleteId**](ParamsApi.md#deleteparamsrevenuedeleteid) | **DELETE** /params/revenue/delete/{id} | Create Revenue
 [**deleteParamsWagesDeleteId**](ParamsApi.md#deleteparamswagesdeleteid) | **DELETE** /params/wages/delete/{id} | Create wages
+[**getParamsBusinesslineList**](ParamsApi.md#getparamsbusinesslinelist) | **GET** /params/businessline/list | profession List 
 [**getParamsFinancialsituation**](ParamsApi.md#getparamsfinancialsituation) | **GET** /params/financialsituation |  list Transaction Type
 [**getParamsListcountries**](ParamsApi.md#getparamslistcountries) | **GET** /params/listcountries | Country List 
 [**getParamsMatrimonials**](ParamsApi.md#getparamsmatrimonials) | **GET** /params/matrimonials | Matrimonials list
@@ -20,6 +21,7 @@ Method | HTTP request | Description
 [**getParamsRevenueList**](ParamsApi.md#getparamsrevenuelist) | **GET** /params/revenue/list | Revenu List 
 [**getParamsTransactiontype**](ParamsApi.md#getparamstransactiontype) | **GET** /params/transactiontype |  list Transaction Type
 [**getParamsWagesList**](ParamsApi.md#getparamswageslist) | **GET** /params/wages/list | Wages List 
+[**postParamsBusinesslineNew**](ParamsApi.md#postparamsbusinesslinenew) | **POST** /params/businessline/new | Create profession
 [**postParamsProfessionNew**](ParamsApi.md#postparamsprofessionnew) | **POST** /params/profession/new | Create profession
 [**postParamsRevenueNew**](ParamsApi.md#postparamsrevenuenew) | **POST** /params/revenue/new | Create Revenue
 [**postParamsWagesNew**](ParamsApi.md#postparamswagesnew) | **POST** /params/wages/new | Create wages
@@ -136,6 +138,45 @@ Name | Type | Description  | Notes
 ### Return type
 
 **String**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getParamsBusinesslineList**
+> BuiltList<Situation> getParamsBusinesslineList()
+
+profession List 
+
+Return profession list
+
+### Example
+```dart
+import 'package:drassy_api/api.dart';
+
+final api = DrassyApi().getParamsApi();
+
+try {
+    final response = api.getParamsBusinesslineList();
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling ParamsApi->getParamsBusinesslineList: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**BuiltList&lt;Situation&gt;**](Situation.md)
 
 ### Authorization
 
@@ -460,6 +501,47 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **postParamsBusinesslineNew**
+> Situation postParamsBusinesslineNew(body)
+
+Create profession
+
+### Example
+```dart
+import 'package:drassy_api/api.dart';
+
+final api = DrassyApi().getParamsApi();
+final BusinessLineRequest body = ; // BusinessLineRequest | 
+
+try {
+    final response = api.postParamsBusinesslineNew(body);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling ParamsApi->postParamsBusinesslineNew: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**BusinessLineRequest**](BusinessLineRequest.md)|  | [optional] 
+
+### Return type
+
+[**Situation**](Situation.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **postParamsProfessionNew**
 > String postParamsProfessionNew(body)
 
@@ -470,7 +552,7 @@ Create profession
 import 'package:drassy_api/api.dart';
 
 final api = DrassyApi().getParamsApi();
-final RevenueSchema body = ; // RevenueSchema | 
+final BusinessLineRequest body = ; // BusinessLineRequest | 
 
 try {
     final response = api.postParamsProfessionNew(body);
@@ -484,7 +566,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RevenueSchema**](RevenueSchema.md)|  | [optional] 
+ **body** | [**BusinessLineRequest**](BusinessLineRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -511,7 +593,7 @@ Create Revenue
 import 'package:drassy_api/api.dart';
 
 final api = DrassyApi().getParamsApi();
-final RevenueSchema body = ; // RevenueSchema | 
+final BusinessLineRequest body = ; // BusinessLineRequest | 
 
 try {
     final response = api.postParamsRevenueNew(body);
@@ -525,7 +607,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RevenueSchema**](RevenueSchema.md)|  | [optional] 
+ **body** | [**BusinessLineRequest**](BusinessLineRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -552,7 +634,7 @@ Create wages
 import 'package:drassy_api/api.dart';
 
 final api = DrassyApi().getParamsApi();
-final RevenueSchema body = ; // RevenueSchema | 
+final BusinessLineRequest body = ; // BusinessLineRequest | 
 
 try {
     final response = api.postParamsWagesNew(body);
@@ -566,7 +648,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RevenueSchema**](RevenueSchema.md)|  | [optional] 
+ **body** | [**BusinessLineRequest**](BusinessLineRequest.md)|  | [optional] 
 
 ### Return type
 

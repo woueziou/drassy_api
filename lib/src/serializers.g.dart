@@ -7,6 +7,7 @@ part of 'serializers.dart';
 // **************************************************************************
 
 Serializers _$serializers = (new Serializers().toBuilder()
+      ..add(BusinessLineRequest.serializer)
       ..add(CountryResponse.serializer)
       ..add(CreateCountrySchema.serializer)
       ..add(CreateCredentialsRequest.serializer)
@@ -27,7 +28,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(RegisterModel.serializer)
       ..add(RegisterModelSexEnum.serializer)
       ..add(RenewToken.serializer)
-      ..add(RevenueSchema.serializer)
       ..add(Situation.serializer)
       ..add(TransactionResponse.serializer)
       ..add(TransactionType.serializer)

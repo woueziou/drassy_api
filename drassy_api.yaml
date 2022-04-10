@@ -1,1 +1,892 @@
-{"swagger":"2.0","host":"localhost:2335","basePath":"/","schemes":["http","https"],"info":{"title":"DRASSY Server api doc","version":"1.0.0","contact":{"name":"Taas Ekpaye","email":"taasekpaye@outlook.fr"}},"securityDefinitions":{"Bearer":{"type":"apiKey","description":"Using the Authorization header with the Bearer scheme.","in":"header","name":"Authorization"}},"tags":[],"paths":{"/fixedload":{"get":{"summary":"User fixed Load list","operationId":"getFixedload","description":"List user fixed Load","tags":["FixedLoad"],"responses":{"200":{"schema":{"$ref":"#/definitions/FixedLoadResponseList"},"description":"Successful"}}}},"/auth/whoami":{"get":{"summary":"User Info","operationId":"getAuthWhoami","description":"Return User info","tags":["Auth"],"responses":{"200":{"schema":{"$ref":"#/definitions/UserInfoResponse"},"description":"Successful"}}}},"/financial/profile":{"get":{"summary":"Get Client financial profile","operationId":"getFinancialProfile","tags":["Finance"],"responses":{"200":{"schema":{"$ref":"#/definitions/FinancialInfoResponse"},"description":"Successful"}}}},"/invest/list":{"get":{"summary":" list invest option list","operationId":"getInvestList","description":"Return invest option list","tags":["Invest"],"responses":{"200":{"schema":{"$ref":"#/definitions/InvestOptionResponseList"},"description":"Successful"}}}},"/params/financialsituation":{"get":{"summary":" list Transaction Type","operationId":"getParamsFinancialsituation","description":"Return Transaction Type list","tags":["Params"],"responses":{"200":{"schema":{"$ref":"#/definitions/FinancialSituationResponseList"},"description":"Successful"}}}},"/params/listcountries":{"get":{"summary":"Country List ","operationId":"getParamsListcountries","description":"Return Country list","tags":["Params"],"responses":{"200":{"schema":{"$ref":"#/definitions/CountryResponseList"},"description":"Successful"}}}},"/params/matrimonials":{"get":{"summary":"Matrimonials list","operationId":"getParamsMatrimonials","description":"Return operation list","tags":["Params"],"responses":{"200":{"schema":{"$ref":"#/definitions/MatrimonialsResponseList"},"description":"Successful"}}}},"/params/operation":{"get":{"summary":"Operation list","operationId":"getParamsOperation","description":"Return operation list","tags":["Params"],"responses":{"200":{"schema":{"$ref":"#/definitions/MatrimonialsResponseList"},"description":"Successful"}}}},"/params/transactiontype":{"get":{"summary":" list Transaction Type","operationId":"getParamsTransactiontype","description":"Return Transaction Type list","tags":["Params"],"responses":{"200":{"schema":{"$ref":"#/definitions/Model1"},"description":"Successful"}}}},"/transaction/date":{"get":{"summary":"Get transactions of a date","operationId":"getTransactionDate","description":"Return Transactions","parameters":[{"type":"integer","name":"date","in":"query"}],"tags":["Transaction"],"responses":{"200":{"schema":{"$ref":"#/definitions/Model2"},"description":"Successful"}}}},"/transaction/period":{"get":{"summary":"Get transaction between two dates","operationId":"getTransactionPeriod","description":"Return Transactions","parameters":[{"type":"integer","name":"start","in":"query"},{"type":"integer","name":"end","in":"query"}],"tags":["Transaction"],"responses":{"200":{"schema":{"$ref":"#/definitions/Model2"},"description":"Successful"}}}},"/transaction/search":{"get":{"summary":"Search transaction","operationId":"getTransactionSearch","description":"Return User info","tags":["Transaction"],"responses":{"200":{"schema":{"$ref":"#/definitions/Model2"},"description":"Successful"}}}},"/params/profession/list":{"get":{"summary":"profession List ","operationId":"getParamsProfessionList","description":"Return profession list","tags":["Params"],"responses":{"default":{"schema":{"type":"string"},"description":"Successful"}}}},"/params/revenue/list":{"get":{"summary":"Revenu List ","operationId":"getParamsRevenueList","description":"Return Revenue list","tags":["Params"],"responses":{"default":{"schema":{"type":"string"},"description":"Successful"}}}},"/params/wages/list":{"get":{"summary":"Wages List ","operationId":"getParamsWagesList","description":"Return Wages list","tags":["Params"],"responses":{"200":{"schema":{"$ref":"#/definitions/FinancialSituationResponseList"},"description":"Successful"}}}},"/auth/changepassword":{"post":{"summary":"User Info","operationId":"postAuthChangepassword","description":"Return User info","parameters":[{"in":"body","name":"body","schema":{"$ref":"#/definitions/NewPasswordModel"}}],"tags":["Auth"],"responses":{"200":{"schema":{"type":"string"},"description":"Successful"}}}},"/auth/create_credential":{"post":{"summary":"Create user credential","operationId":"postAuthCreate_credential","description":"Return String","parameters":[{"in":"body","name":"body","schema":{"$ref":"#/definitions/CreateCredentialsRequest"}}],"tags":["Auth"],"responses":{"default":{"schema":{"type":"string"},"description":"Successful"}}}},"/auth/login":{"post":{"summary":"Login user","operationId":"postAuthLogin","description":"Return String","parameters":[{"in":"body","name":"body","schema":{"$ref":"#/definitions/LoginModel"}}],"tags":["Auth"],"responses":{"default":{"schema":{"type":"string"},"description":"Successful"}}}},"/auth/register":{"post":{"summary":"Create user","operationId":"postAuthRegister","description":"Return String","parameters":[{"in":"body","name":"body","schema":{"$ref":"#/definitions/RegisterModel"}}],"tags":["Auth"],"responses":{"default":{"schema":{"type":"string"},"description":"Successful"}}}},"/auth/renew":{"post":{"summary":"User Info","operationId":"postAuthRenew","description":"Return User info","parameters":[{"in":"body","name":"body","schema":{"$ref":"#/definitions/Renew%20Token"}}],"tags":["Auth"],"responses":{"200":{"schema":{"type":"string"},"description":"Successful"}}}},"/country/create":{"post":{"summary":"Create a new country","operationId":"postCountryCreate","parameters":[{"in":"body","name":"body","schema":{"$ref":"#/definitions/CreateCountrySchema"}}],"tags":["Country"],"responses":{"200":{"schema":{"$ref":"#/definitions/CountryResponse"},"description":"Successful"}}}},"/financial/create":{"post":{"summary":"Create Finance","operationId":"postFinancialCreate","parameters":[{"in":"body","name":"body","schema":{"$ref":"#/definitions/CreateFinancialRequest"}}],"tags":["Finance"],"responses":{"200":{"schema":{"$ref":"#/definitions/FinancialInfoResponse"},"description":"Successful"}}}},"/fixedload/create":{"post":{"summary":"Create a fixed load","operationId":"postFixedloadCreate","description":"Return fixed laod","parameters":[{"in":"body","name":"body","schema":{"$ref":"#/definitions/FixedLoadModelRequest"}}],"tags":["FixedLoad"],"responses":{"200":{"schema":{"$ref":"#/definitions/FixedLoadResponse"},"description":"Successful"}}}},"/invest/subscribe":{"post":{"summary":"Subscribe to invest","operationId":"postInvestSubscribe","description":"Return fixed laod","parameters":[{"in":"body","name":"body","schema":{"$ref":"#/definitions/InvestSubscribeModel"}}],"tags":["Invest"],"responses":{"200":{"schema":{"$ref":"#/definitions/InvestSubscribeResponse"},"description":"Successful"}}}},"/misc/phone":{"post":{"summary":"Auth Phone Device","operationId":"postMiscPhone","parameters":[{"in":"body","name":"body","schema":{"$ref":"#/definitions/PhoneVerificationModel"}}],"tags":["Misc"],"responses":{"default":{"schema":{"type":"string"},"description":"Successful"}}}},"/transaction/create":{"post":{"summary":"Create Tansaction","operationId":"postTransactionCreate","description":"Create Transaction","parameters":[{"in":"body","name":"body","schema":{"$ref":"#/definitions/CreateTransactionSchema"}}],"tags":["Transaction"],"responses":{"200":{"schema":{"$ref":"#/definitions/TransactionResponse"},"description":"Successful"}}}},"/params/profession/new":{"post":{"summary":"Create profession","operationId":"postParamsProfessionNew","parameters":[{"in":"body","name":"body","schema":{"$ref":"#/definitions/RevenueSchema"}}],"tags":["Params"],"responses":{"default":{"schema":{"type":"string"},"description":"Successful"}}}},"/params/revenue/new":{"post":{"summary":"Create Revenue","operationId":"postParamsRevenueNew","parameters":[{"in":"body","name":"body","schema":{"$ref":"#/definitions/RevenueSchema"}}],"tags":["Params"],"responses":{"default":{"schema":{"type":"string"},"description":"Successful"}}}},"/params/wages/new":{"post":{"summary":"Create wages","operationId":"postParamsWagesNew","parameters":[{"in":"body","name":"body","schema":{"$ref":"#/definitions/RevenueSchema"}}],"tags":["Params"],"responses":{"default":{"schema":{"type":"string"},"description":"Successful"}}}},"/financial/update":{"patch":{"summary":"Update finance","operationId":"patchFinancialUpdate","parameters":[{"in":"body","name":"body","schema":{"$ref":"#/definitions/FinancialInfoResponseUpdateRequest"}}],"tags":["Finance"],"responses":{"default":{"schema":{"type":"string"},"description":"Successful"}}}},"/fixedload/{id}":{"delete":{"summary":"Delete load","operationId":"deleteFixedloadId","description":"Return User info","parameters":[{"type":"string","name":"id","in":"path","required":true}],"tags":["FixedLoad"],"responses":{"default":{"schema":{"type":"string"},"description":"Successful"}}}},"/transaction/delete/{id}":{"delete":{"summary":"Delete a transaction","operationId":"deleteTransactionDeleteId","description":"Return String","parameters":[{"type":"string","minLength":36,"maxLength":36,"name":"id","in":"path","required":true}],"tags":["Transaction"],"responses":{"200":{"schema":{"$ref":"#/definitions/TransactionResponse"},"description":"Successful"}}}},"/params/profession/delete/{id}":{"delete":{"summary":"Create Revenue","operationId":"deleteParamsProfessionDeleteId","parameters":[{"type":"number","x-constraint":{"sign":"positive"},"name":"id","in":"path","required":true}],"tags":["Params"],"responses":{"default":{"schema":{"type":"string"},"description":"Successful"}}}},"/params/revenue/delete/{id}":{"delete":{"summary":"Create Revenue","operationId":"deleteParamsRevenueDeleteId","parameters":[{"type":"number","x-constraint":{"sign":"positive"},"name":"id","in":"path","required":true}],"tags":["Params"],"responses":{"default":{"schema":{"type":"string"},"description":"Successful"}}}},"/params/wages/delete/{id}":{"delete":{"summary":"Create wages","operationId":"deleteParamsWagesDeleteId","parameters":[{"type":"number","x-constraint":{"sign":"positive"},"name":"id","in":"path","required":true}],"tags":["Params"],"responses":{"default":{"schema":{"type":"string"},"description":"Successful"}}}},"/transaction/update":{"put":{"summary":"Modifiy Tansaction","operationId":"putTransactionUpdate","description":"Modify Transaction","parameters":[{"in":"body","name":"body","schema":{"$ref":"#/definitions/UpdateTransactionSchema"}}],"tags":["Transaction"],"responses":{"default":{"schema":{"type":"string"},"description":"Successful"}}}}},"definitions":{"transaction_type":{"type":"object","properties":{"id":{"type":"string"},"name":{"type":"string"},"operation_type":{"type":"string"}}},"FixedLoadResponse":{"type":"object","properties":{"id":{"type":"string"},"amount":{"type":"number"},"dateLoop":{"type":"number"},"dateCreated":{"type":"number"},"transaction_type":{"$ref":"#/definitions/transaction_type"}}},"FixedLoadResponseList":{"type":"array","items":{"$ref":"#/definitions/FixedLoadResponse"}},"CountryResponse":{"type":"object","properties":{"id":{"type":"string"},"code":{"type":"string"},"name":{"type":"string"},"call_code":{"type":"string"}}},"UserInfoResponse":{"type":"object","properties":{"id":{"type":"string"},"full_name":{"type":"string"},"email":{"type":"string"},"phone":{"type":"string"},"sex":{"type":"string"},"scope":{"type":"string"},"Country":{"$ref":"#/definitions/CountryResponse"}}},"situation":{"type":"object","properties":{"id":{"type":"string"},"name":{"type":"string"}}},"FinancialInfoResponse":{"type":"object","properties":{"id":{"type":"string"},"balance":{"type":"string"},"profession":{"type":"string"},"monthly_revenue":{"type":"string"},"matrimonial_status":{"type":"string"},"situation":{"$ref":"#/definitions/situation"},"businessLine":{"$ref":"#/definitions/situation"},"total_person_at_charge":{"type":"string"}}},"InvestOptionResponse":{"type":"object","properties":{"id":{"type":"string"},"name":{"type":"string"},"isAvailable":{"type":"boolean"},"asset_name":{"type":"string"}}},"InvestOptionResponseList":{"type":"array","items":{"$ref":"#/definitions/InvestOptionResponse"}},"FinancialSituationResponseList":{"type":"array","items":{"$ref":"#/definitions/situation"}},"CountryResponseList":{"type":"array","items":{"$ref":"#/definitions/CountryResponse"}},"MatrimonialsResponseList":{"type":"array","items":{"type":"string"}},"Model1":{"type":"array","items":{"$ref":"#/definitions/transaction_type"}},"type_transaction":{"type":"object","properties":{"id":{"type":"string","enum":[true]},"name":{"type":"string","enum":[true]},"operation_type":{"type":"string","enum":[true]}}},"TransactionResponse":{"type":"object","properties":{"id":{"type":"string"},"amount":{"type":"string"},"note":{"type":"string"},"type_transaction":{"$ref":"#/definitions/type_transaction"}}},"Model2":{"type":"array","items":{"$ref":"#/definitions/TransactionResponse"}},"NewPasswordModel":{"type":"object","properties":{"new_password":{"type":"string"},"password":{"type":"string"}}},"CreateCredentialsRequest":{"type":"object","properties":{"user_id":{"type":"string"},"username":{"type":"string"},"password":{"type":"string","minLength":7}}},"LoginModel":{"type":"object","properties":{"username":{"type":"string"},"password":{"type":"string"}}},"RegisterModel":{"type":"object","properties":{"first_name":{"type":"string"},"last_name":{"type":"string"},"phone":{"type":"string"},"country_id":{"type":"string"},"email":{"type":"string"},"sex":{"type":"string","enum":["M","F"]}}},"Renew Token":{"type":"object","properties":{"token":{"type":"string"}}},"CreateCountrySchema":{"type":"object","properties":{"name":{"type":"string"},"code":{"type":"number"}}},"CreateFinancialRequest":{"type":"object","properties":{"financial_stituation_id":{"type":"string"},"profession":{"type":"string"},"businessLineId":{"type":"integer"},"total_person_at_charge":{"type":"integer"},"balance":{"type":"integer"},"monthly_revenue":{"type":"string"},"matrimonial_status":{"type":"string","enum":["MARIE","CELIBATAIRE"]}}},"FixedLoadModelRequest":{"type":"object","properties":{"userId":{"type":"string"},"amount":{"type":"number"},"type_transactionId":{"type":"string"},"dateLoop":{"type":"number","x-constraint":{"sign":"positive"}}}},"InvestSubscribeModel":{"type":"object","properties":{"investment_id":{"type":"string"}}},"investment":{"type":"object","properties":{"select":{"$ref":"#/definitions/situation"}}},"InvestSubscribeResponse":{"type":"object","properties":{"id":{"type":"string"},"comment":{"type":"string"},"investment":{"$ref":"#/definitions/investment"}}},"PhoneVerificationModel":{"type":"object","properties":{"name":{"type":"string"},"phone_id":{"type":"string"},"version":{"type":"string"}}},"CreateTransactionSchema":{"type":"object","properties":{"amount":{"type":"number"},"type_transaction_id":{"type":"string"},"note":{"type":"string"}}},"RevenueSchema":{"type":"object","properties":{"name":{"type":"string"}}},"FinancialInfoResponseUpdateRequest":{"type":"object","properties":{"id":{"type":"string"},"financial_stituation_id":{"type":"string"},"profession":{"type":"string"},"total_person_at_charge":{"type":"number","x-constraint":{"sign":"positive"}},"balance":{"type":"integer"},"monthly_revenue":{"type":"integer"}}},"UpdateTransactionSchema":{"type":"object","properties":{"id":{"type":"string"},"amount":{"type":"number"},"type_transaction_id":{"type":"string"},"note":{"type":"string"}}}}}
+swagger: "2.0"
+host: localhost:2335
+basePath: /
+schemes:
+  - http
+  - https
+info:
+  title: DRASSY Server api doc
+  version: 1.0.0
+  contact:
+    name: Taas Ekpaye
+    email: taasekpaye@outlook.fr
+securityDefinitions:
+  Bearer:
+    type: apiKey
+    description: Using the Authorization header with the Bearer scheme.
+    in: header
+    name: Authorization
+tags: []
+paths:
+  /fixedload:
+    get:
+      summary: User fixed Load list
+      operationId: getFixedload
+      description: List user fixed Load
+      tags:
+        - FixedLoad
+      responses:
+        "200":
+          schema:
+            $ref: "#/definitions/FixedLoadResponseList"
+          description: Successful
+  /auth/whoami:
+    get:
+      summary: User Info
+      operationId: getAuthWhoami
+      description: Return User info
+      tags:
+        - Auth
+      responses:
+        "200":
+          schema:
+            $ref: "#/definitions/UserInfoResponse"
+          description: Successful
+  /financial/profile:
+    get:
+      summary: Get Client financial profile
+      operationId: getFinancialProfile
+      tags:
+        - Finance
+      responses:
+        "200":
+          schema:
+            $ref: "#/definitions/FinancialInfoResponse"
+          description: Successful
+  /invest/list:
+    get:
+      summary: " list invest option list"
+      operationId: getInvestList
+      description: Return invest option list
+      tags:
+        - Invest
+      responses:
+        "200":
+          schema:
+            $ref: "#/definitions/InvestOptionResponseList"
+          description: Successful
+  /params/financialsituation:
+    get:
+      summary: " list Transaction Type"
+      operationId: getParamsFinancialsituation
+      description: Return Transaction Type list
+      tags:
+        - Params
+      responses:
+        "200":
+          schema:
+            $ref: "#/definitions/FinancialSituationResponseList"
+          description: Successful
+  /params/listcountries:
+    get:
+      summary: "Country List "
+      operationId: getParamsListcountries
+      description: Return Country list
+      tags:
+        - Params
+      responses:
+        "200":
+          schema:
+            $ref: "#/definitions/CountryResponseList"
+          description: Successful
+  /params/matrimonials:
+    get:
+      summary: Matrimonials list
+      operationId: getParamsMatrimonials
+      description: Return operation list
+      tags:
+        - Params
+      responses:
+        "200":
+          schema:
+            $ref: "#/definitions/MatrimonialsResponseList"
+          description: Successful
+  /params/operation:
+    get:
+      summary: Operation list
+      operationId: getParamsOperation
+      description: Return operation list
+      tags:
+        - Params
+      responses:
+        "200":
+          schema:
+            $ref: "#/definitions/MatrimonialsResponseList"
+          description: Successful
+  /params/transactiontype:
+    get:
+      summary: " list Transaction Type"
+      operationId: getParamsTransactiontype
+      description: Return Transaction Type list
+      tags:
+        - Params
+      responses:
+        "200":
+          schema:
+            $ref: "#/definitions/Model1"
+          description: Successful
+  /transaction/date:
+    get:
+      summary: Get transactions of a date
+      operationId: getTransactionDate
+      description: Return Transactions
+      parameters:
+        - type: integer
+          name: date
+          in: query
+      tags:
+        - Transaction
+      responses:
+        "200":
+          schema:
+            $ref: "#/definitions/Model2"
+          description: Successful
+  /transaction/period:
+    get:
+      summary: Get transaction between two dates
+      operationId: getTransactionPeriod
+      description: Return Transactions
+      parameters:
+        - type: integer
+          name: start
+          in: query
+        - type: integer
+          name: end
+          in: query
+      tags:
+        - Transaction
+      responses:
+        "200":
+          schema:
+            $ref: "#/definitions/Model2"
+          description: Successful
+  /transaction/search:
+    get:
+      summary: Search transaction
+      operationId: getTransactionSearch
+      description: Return User info
+      tags:
+        - Transaction
+      responses:
+        "200":
+          schema:
+            $ref: "#/definitions/Model2"
+          description: Successful
+  /params/businessline/list:
+    get:
+      summary: "profession List "
+      operationId: getParamsBusinesslineList
+      description: Return profession list
+      tags:
+        - Params
+      responses:
+        "200":
+          schema:
+            $ref: "#/definitions/FinancialSituationResponseList"
+          description: Successful
+  /params/profession/list:
+    get:
+      summary: "profession List "
+      operationId: getParamsProfessionList
+      description: Return profession list
+      tags:
+        - Params
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /params/revenue/list:
+    get:
+      summary: "Revenu List "
+      operationId: getParamsRevenueList
+      description: Return Revenue list
+      tags:
+        - Params
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /params/wages/list:
+    get:
+      summary: "Wages List "
+      operationId: getParamsWagesList
+      description: Return Wages list
+      tags:
+        - Params
+      responses:
+        "200":
+          schema:
+            $ref: "#/definitions/FinancialSituationResponseList"
+          description: Successful
+  /auth/changepassword:
+    post:
+      summary: User Info
+      operationId: postAuthChangepassword
+      description: Return User info
+      parameters:
+        - in: body
+          name: body
+          schema:
+            $ref: "#/definitions/NewPasswordModel"
+      tags:
+        - Auth
+      responses:
+        "200":
+          schema:
+            type: string
+          description: Successful
+  /auth/create_credential:
+    post:
+      summary: Create user credential
+      operationId: postAuthCreate_credential
+      description: Return String
+      parameters:
+        - in: body
+          name: body
+          schema:
+            $ref: "#/definitions/CreateCredentialsRequest"
+      tags:
+        - Auth
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /auth/login:
+    post:
+      summary: Login user
+      operationId: postAuthLogin
+      description: Return String
+      parameters:
+        - in: body
+          name: body
+          schema:
+            $ref: "#/definitions/LoginModel"
+      tags:
+        - Auth
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /auth/register:
+    post:
+      summary: Create user
+      operationId: postAuthRegister
+      description: Return String
+      parameters:
+        - in: body
+          name: body
+          schema:
+            $ref: "#/definitions/RegisterModel"
+      tags:
+        - Auth
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /auth/renew:
+    post:
+      summary: User Info
+      operationId: postAuthRenew
+      description: Return User info
+      parameters:
+        - in: body
+          name: body
+          schema:
+            $ref: "#/definitions/Renew%20Token"
+      tags:
+        - Auth
+      responses:
+        "200":
+          schema:
+            type: string
+          description: Successful
+  /country/create:
+    post:
+      summary: Create a new country
+      operationId: postCountryCreate
+      parameters:
+        - in: body
+          name: body
+          schema:
+            $ref: "#/definitions/CreateCountrySchema"
+      tags:
+        - Country
+      responses:
+        "200":
+          schema:
+            $ref: "#/definitions/CountryResponse"
+          description: Successful
+  /financial/create:
+    post:
+      summary: Create Finance
+      operationId: postFinancialCreate
+      parameters:
+        - in: body
+          name: body
+          schema:
+            $ref: "#/definitions/CreateFinancialRequest"
+      tags:
+        - Finance
+      responses:
+        "200":
+          schema:
+            $ref: "#/definitions/FinancialInfoResponse"
+          description: Successful
+  /fixedload/create:
+    post:
+      summary: Create a fixed load
+      operationId: postFixedloadCreate
+      description: Return fixed laod
+      parameters:
+        - in: body
+          name: body
+          schema:
+            $ref: "#/definitions/FixedLoadModelRequest"
+      tags:
+        - FixedLoad
+      responses:
+        "200":
+          schema:
+            $ref: "#/definitions/FixedLoadResponse"
+          description: Successful
+  /invest/subscribe:
+    post:
+      summary: Subscribe to invest
+      operationId: postInvestSubscribe
+      description: Return fixed laod
+      parameters:
+        - in: body
+          name: body
+          schema:
+            $ref: "#/definitions/InvestSubscribeModel"
+      tags:
+        - Invest
+      responses:
+        "200":
+          schema:
+            $ref: "#/definitions/InvestSubscribeResponse"
+          description: Successful
+  /misc/phone:
+    post:
+      summary: Auth Phone Device
+      operationId: postMiscPhone
+      parameters:
+        - in: body
+          name: body
+          schema:
+            $ref: "#/definitions/PhoneVerificationModel"
+      tags:
+        - Misc
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /transaction/create:
+    post:
+      summary: Create Tansaction
+      operationId: postTransactionCreate
+      description: Create Transaction
+      parameters:
+        - in: body
+          name: body
+          schema:
+            $ref: "#/definitions/CreateTransactionSchema"
+      tags:
+        - Transaction
+      responses:
+        "200":
+          schema:
+            $ref: "#/definitions/TransactionResponse"
+          description: Successful
+  /params/businessline/new:
+    post:
+      summary: Create profession
+      operationId: postParamsBusinesslineNew
+      parameters:
+        - in: body
+          name: body
+          schema:
+            $ref: "#/definitions/BusinessLineRequest"
+      tags:
+        - Params
+      responses:
+        "200":
+          schema:
+            $ref: "#/definitions/situation"
+          description: Successful
+  /params/profession/new:
+    post:
+      summary: Create profession
+      operationId: postParamsProfessionNew
+      parameters:
+        - in: body
+          name: body
+          schema:
+            $ref: "#/definitions/BusinessLineRequest"
+      tags:
+        - Params
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /params/revenue/new:
+    post:
+      summary: Create Revenue
+      operationId: postParamsRevenueNew
+      parameters:
+        - in: body
+          name: body
+          schema:
+            $ref: "#/definitions/BusinessLineRequest"
+      tags:
+        - Params
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /params/wages/new:
+    post:
+      summary: Create wages
+      operationId: postParamsWagesNew
+      parameters:
+        - in: body
+          name: body
+          schema:
+            $ref: "#/definitions/BusinessLineRequest"
+      tags:
+        - Params
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /financial/update:
+    patch:
+      summary: Update finance
+      operationId: patchFinancialUpdate
+      parameters:
+        - in: body
+          name: body
+          schema:
+            $ref: "#/definitions/FinancialInfoResponseUpdateRequest"
+      tags:
+        - Finance
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /fixedload/{id}:
+    delete:
+      summary: Delete load
+      operationId: deleteFixedloadId
+      description: Return User info
+      parameters:
+        - type: string
+          name: id
+          in: path
+          required: true
+      tags:
+        - FixedLoad
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /transaction/delete/{id}:
+    delete:
+      summary: Delete a transaction
+      operationId: deleteTransactionDeleteId
+      description: Return String
+      parameters:
+        - type: string
+          minLength: 36
+          maxLength: 36
+          name: id
+          in: path
+          required: true
+      tags:
+        - Transaction
+      responses:
+        "200":
+          schema:
+            $ref: "#/definitions/TransactionResponse"
+          description: Successful
+  /params/profession/delete/{id}:
+    delete:
+      summary: Create Revenue
+      operationId: deleteParamsProfessionDeleteId
+      parameters:
+        - type: number
+          x-constraint:
+            sign: positive
+          name: id
+          in: path
+          required: true
+      tags:
+        - Params
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /params/revenue/delete/{id}:
+    delete:
+      summary: Create Revenue
+      operationId: deleteParamsRevenueDeleteId
+      parameters:
+        - type: number
+          x-constraint:
+            sign: positive
+          name: id
+          in: path
+          required: true
+      tags:
+        - Params
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /params/wages/delete/{id}:
+    delete:
+      summary: Create wages
+      operationId: deleteParamsWagesDeleteId
+      parameters:
+        - type: number
+          x-constraint:
+            sign: positive
+          name: id
+          in: path
+          required: true
+      tags:
+        - Params
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /transaction/update:
+    put:
+      summary: Modifiy Tansaction
+      operationId: putTransactionUpdate
+      description: Modify Transaction
+      parameters:
+        - in: body
+          name: body
+          schema:
+            $ref: "#/definitions/UpdateTransactionSchema"
+      tags:
+        - Transaction
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+definitions:
+  transaction_type:
+    type: object
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+      operation_type:
+        type: string
+  FixedLoadResponse:
+    type: object
+    properties:
+      id:
+        type: string
+      amount:
+        type: number
+      dateLoop:
+        type: number
+      dateCreated:
+        type: number
+      transaction_type:
+        $ref: "#/definitions/transaction_type"
+  FixedLoadResponseList:
+    type: array
+    items:
+      $ref: "#/definitions/FixedLoadResponse"
+  CountryResponse:
+    type: object
+    properties:
+      id:
+        type: string
+      code:
+        type: string
+      name:
+        type: string
+      call_code:
+        type: string
+  UserInfoResponse:
+    type: object
+    properties:
+      id:
+        type: string
+      full_name:
+        type: string
+      email:
+        type: string
+      phone:
+        type: string
+      sex:
+        type: string
+      scope:
+        type: string
+      Country:
+        $ref: "#/definitions/CountryResponse"
+  situation:
+    type: object
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+  FinancialInfoResponse:
+    type: object
+    properties:
+      id:
+        type: string
+      balance:
+        type: string
+      profession:
+        type: string
+      monthly_revenue:
+        type: string
+      matrimonial_status:
+        type: string
+      situation:
+        $ref: "#/definitions/situation"
+      businessLine:
+        $ref: "#/definitions/situation"
+      total_person_at_charge:
+        type: string
+  InvestOptionResponse:
+    type: object
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+      isAvailable:
+        type: boolean
+      asset_name:
+        type: string
+  InvestOptionResponseList:
+    type: array
+    items:
+      $ref: "#/definitions/InvestOptionResponse"
+  FinancialSituationResponseList:
+    type: array
+    items:
+      $ref: "#/definitions/situation"
+  CountryResponseList:
+    type: array
+    items:
+      $ref: "#/definitions/CountryResponse"
+  MatrimonialsResponseList:
+    type: array
+    items:
+      type: string
+  Model1:
+    type: array
+    items:
+      $ref: "#/definitions/transaction_type"
+  type_transaction:
+    type: object
+    properties:
+      id:
+        type: string
+        enum:
+          - true
+      name:
+        type: string
+        enum:
+          - true
+      operation_type:
+        type: string
+        enum:
+          - true
+  TransactionResponse:
+    type: object
+    properties:
+      id:
+        type: string
+      amount:
+        type: string
+      note:
+        type: string
+      type_transaction:
+        $ref: "#/definitions/type_transaction"
+  Model2:
+    type: array
+    items:
+      $ref: "#/definitions/TransactionResponse"
+  NewPasswordModel:
+    type: object
+    properties:
+      new_password:
+        type: string
+      password:
+        type: string
+  CreateCredentialsRequest:
+    type: object
+    properties:
+      user_id:
+        type: string
+      username:
+        type: string
+      password:
+        type: string
+        minLength: 7
+  LoginModel:
+    type: object
+    properties:
+      username:
+        type: string
+      password:
+        type: string
+  RegisterModel:
+    type: object
+    properties:
+      first_name:
+        type: string
+      last_name:
+        type: string
+      phone:
+        type: string
+      country_id:
+        type: string
+      email:
+        type: string
+      sex:
+        type: string
+        enum:
+          - M
+          - F
+  Renew Token:
+    type: object
+    properties:
+      token:
+        type: string
+  CreateCountrySchema:
+    type: object
+    properties:
+      name:
+        type: string
+      code:
+        type: number
+  CreateFinancialRequest:
+    type: object
+    properties:
+      financial_stituation_id:
+        type: string
+      profession:
+        type: string
+      businessLineId:
+        type: integer
+      total_person_at_charge:
+        type: integer
+      balance:
+        type: integer
+      monthly_revenue:
+        type: string
+      matrimonial_status:
+        type: string
+        enum:
+          - MARIE
+          - CELIBATAIRE
+  FixedLoadModelRequest:
+    type: object
+    properties:
+      userId:
+        type: string
+      amount:
+        type: number
+      type_transactionId:
+        type: string
+      dateLoop:
+        type: number
+        x-constraint:
+          sign: positive
+  InvestSubscribeModel:
+    type: object
+    properties:
+      investment_id:
+        type: string
+  investment:
+    type: object
+    properties:
+      select:
+        $ref: "#/definitions/situation"
+  InvestSubscribeResponse:
+    type: object
+    properties:
+      id:
+        type: string
+      comment:
+        type: string
+      investment:
+        $ref: "#/definitions/investment"
+  PhoneVerificationModel:
+    type: object
+    properties:
+      name:
+        type: string
+      phone_id:
+        type: string
+      version:
+        type: string
+  CreateTransactionSchema:
+    type: object
+    properties:
+      amount:
+        type: number
+      type_transaction_id:
+        type: string
+      note:
+        type: string
+  BusinessLineRequest:
+    type: object
+    properties:
+      name:
+        type: string
+  FinancialInfoResponseUpdateRequest:
+    type: object
+    properties:
+      id:
+        type: string
+      financial_stituation_id:
+        type: string
+      profession:
+        type: string
+      total_person_at_charge:
+        type: number
+        x-constraint:
+          sign: positive
+      balance:
+        type: integer
+      monthly_revenue:
+        type: integer
+  UpdateTransactionSchema:
+    type: object
+    properties:
+      id:
+        type: string
+      amount:
+        type: number
+      type_transaction_id:
+        type: string
+      note:
+        type: string

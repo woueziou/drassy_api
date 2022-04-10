@@ -82,6 +82,7 @@ Class | Method | HTTP request | Description
 [*ParamsApi*](doc\ParamsApi.md) | [**deleteParamsProfessionDeleteId**](doc\ParamsApi.md#deleteparamsprofessiondeleteid) | **DELETE** /params/profession/delete/{id} | Create Revenue
 [*ParamsApi*](doc\ParamsApi.md) | [**deleteParamsRevenueDeleteId**](doc\ParamsApi.md#deleteparamsrevenuedeleteid) | **DELETE** /params/revenue/delete/{id} | Create Revenue
 [*ParamsApi*](doc\ParamsApi.md) | [**deleteParamsWagesDeleteId**](doc\ParamsApi.md#deleteparamswagesdeleteid) | **DELETE** /params/wages/delete/{id} | Create wages
+[*ParamsApi*](doc\ParamsApi.md) | [**getParamsBusinesslineList**](doc\ParamsApi.md#getparamsbusinesslinelist) | **GET** /params/businessline/list | profession List 
 [*ParamsApi*](doc\ParamsApi.md) | [**getParamsFinancialsituation**](doc\ParamsApi.md#getparamsfinancialsituation) | **GET** /params/financialsituation |  list Transaction Type
 [*ParamsApi*](doc\ParamsApi.md) | [**getParamsListcountries**](doc\ParamsApi.md#getparamslistcountries) | **GET** /params/listcountries | Country List 
 [*ParamsApi*](doc\ParamsApi.md) | [**getParamsMatrimonials**](doc\ParamsApi.md#getparamsmatrimonials) | **GET** /params/matrimonials | Matrimonials list
@@ -90,6 +91,7 @@ Class | Method | HTTP request | Description
 [*ParamsApi*](doc\ParamsApi.md) | [**getParamsRevenueList**](doc\ParamsApi.md#getparamsrevenuelist) | **GET** /params/revenue/list | Revenu List 
 [*ParamsApi*](doc\ParamsApi.md) | [**getParamsTransactiontype**](doc\ParamsApi.md#getparamstransactiontype) | **GET** /params/transactiontype |  list Transaction Type
 [*ParamsApi*](doc\ParamsApi.md) | [**getParamsWagesList**](doc\ParamsApi.md#getparamswageslist) | **GET** /params/wages/list | Wages List 
+[*ParamsApi*](doc\ParamsApi.md) | [**postParamsBusinesslineNew**](doc\ParamsApi.md#postparamsbusinesslinenew) | **POST** /params/businessline/new | Create profession
 [*ParamsApi*](doc\ParamsApi.md) | [**postParamsProfessionNew**](doc\ParamsApi.md#postparamsprofessionnew) | **POST** /params/profession/new | Create profession
 [*ParamsApi*](doc\ParamsApi.md) | [**postParamsRevenueNew**](doc\ParamsApi.md#postparamsrevenuenew) | **POST** /params/revenue/new | Create Revenue
 [*ParamsApi*](doc\ParamsApi.md) | [**postParamsWagesNew**](doc\ParamsApi.md#postparamswagesnew) | **POST** /params/wages/new | Create wages
@@ -103,6 +105,7 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
+ - [BusinessLineRequest](doc\BusinessLineRequest.md)
  - [CountryResponse](doc\CountryResponse.md)
  - [CreateCountrySchema](doc\CreateCountrySchema.md)
  - [CreateCredentialsRequest](doc\CreateCredentialsRequest.md)
@@ -121,7 +124,6 @@ Class | Method | HTTP request | Description
  - [PhoneVerificationModel](doc\PhoneVerificationModel.md)
  - [RegisterModel](doc\RegisterModel.md)
  - [RenewToken](doc\RenewToken.md)
- - [RevenueSchema](doc\RevenueSchema.md)
  - [Situation](doc\Situation.md)
  - [TransactionResponse](doc\TransactionResponse.md)
  - [TransactionType](doc\TransactionType.md)

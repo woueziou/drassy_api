@@ -18,6 +18,7 @@ export 'package:drassy_api/src/api/misc_api.dart';
 export 'package:drassy_api/src/api/params_api.dart';
 export 'package:drassy_api/src/api/transaction_api.dart';
 
+export 'package:drassy_api/src/model/business_line_request.dart';
 export 'package:drassy_api/src/model/country_response.dart';
 export 'package:drassy_api/src/model/create_country_schema.dart';
 export 'package:drassy_api/src/model/create_credentials_request.dart';
@@ -36,7 +37,6 @@ export 'package:drassy_api/src/model/new_password_model.dart';
 export 'package:drassy_api/src/model/phone_verification_model.dart';
 export 'package:drassy_api/src/model/register_model.dart';
 export 'package:drassy_api/src/model/renew_token.dart';
-export 'package:drassy_api/src/model/revenue_schema.dart';
 export 'package:drassy_api/src/model/situation.dart';
 export 'package:drassy_api/src/model/transaction_response.dart';
 export 'package:drassy_api/src/model/transaction_type.dart';

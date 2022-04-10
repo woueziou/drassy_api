@@ -12,6 +12,7 @@ import 'package:built_value/iso_8601_date_time_serializer.dart';
 import 'package:drassy_api/src/date_serializer.dart';
 import 'package:drassy_api/src/model/date.dart';
 
+import 'package:drassy_api/src/model/business_line_request.dart';
 import 'package:drassy_api/src/model/country_response.dart';
 import 'package:drassy_api/src/model/create_country_schema.dart';
 import 'package:drassy_api/src/model/create_credentials_request.dart';
@@ -30,7 +31,6 @@ import 'package:drassy_api/src/model/new_password_model.dart';
 import 'package:drassy_api/src/model/phone_verification_model.dart';
 import 'package:drassy_api/src/model/register_model.dart';
 import 'package:drassy_api/src/model/renew_token.dart';
-import 'package:drassy_api/src/model/revenue_schema.dart';
 import 'package:drassy_api/src/model/situation.dart';
 import 'package:drassy_api/src/model/transaction_response.dart';
 import 'package:drassy_api/src/model/transaction_type.dart';
@@ -41,6 +41,7 @@ import 'package:drassy_api/src/model/user_info_response.dart';
 part 'serializers.g.dart';
 
 @SerializersFor([
+  BusinessLineRequest,
   CountryResponse,
   CreateCountrySchema,
   CreateCredentialsRequest,
@@ -59,7 +60,6 @@ part 'serializers.g.dart';
   PhoneVerificationModel,
   RegisterModel,
   RenewToken,
-  RevenueSchema,
   Situation,
   TransactionResponse,
   TransactionType,
