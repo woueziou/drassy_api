@@ -10,6 +10,8 @@ info:
   contact:
     name: Taas Ekpaye
     email: taasekpaye@outlook.fr
+security:
+  - Bearer: []
 securityDefinitions:
   Bearer:
     type: apiKey
