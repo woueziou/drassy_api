@@ -163,7 +163,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getParamsBusinesslineList**
-> BuiltList<Situation> getParamsBusinesslineList()
+> BuiltList<BusinessLineResponse> getParamsBusinesslineList()
 
 profession List 
 
@@ -192,7 +192,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**BuiltList&lt;Situation&gt;**](Situation.md)
+[**BuiltList&lt;BusinessLineResponse&gt;**](BusinessLineResponse.md)
 
 ### Authorization
 

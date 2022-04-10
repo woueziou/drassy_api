@@ -725,12 +725,19 @@ definitions:
     type: array
     items:
       $ref: "#/definitions/TransactionResponse"
+  BusinessLineResponse:
+    type: object
+    properties:
+      id:
+        type: number
+      name:
+        type: string
   BusinessLineResponseList:
     type: array
     x-constraint:
       single: true
     items:
-      $ref: "#/definitions/situation"
+      $ref: "#/definitions/BusinessLineResponse"
   WagesResponseList:
     type: array
     items:
@@ -890,13 +897,6 @@ definitions:
   BusinessLineRequest:
     type: object
     properties:
-      name:
-        type: string
-  BusinessLineResponse:
-    type: object
-    properties:
-      id:
-        type: number
       name:
         type: string
   FinancialInfoResponseUpdateRequest:

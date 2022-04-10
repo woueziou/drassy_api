@@ -73,6 +73,10 @@ part 'serializers.g.dart';
 ])
 Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(BusinessLineResponse)]),
+        () => ListBuilder<BusinessLineResponse>(),
+      )
+      ..addBuilderFactory(
         const FullType(BuiltList, [FullType(TransactionResponse)]),
         () => ListBuilder<TransactionResponse>(),
       )

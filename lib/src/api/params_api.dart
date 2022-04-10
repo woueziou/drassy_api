@@ -262,9 +262,9 @@ class ParamsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<Situation>] as data
+  /// Returns a [Future] containing a [Response] with a [BuiltList<BusinessLineResponse>] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<BuiltList<Situation>>> getParamsBusinesslineList({ 
+  Future<Response<BuiltList<BusinessLineResponse>>> getParamsBusinesslineList({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -300,14 +300,14 @@ class ParamsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<Situation> _responseData;
+    BuiltList<BusinessLineResponse> _responseData;
 
     try {
-      const _responseType = FullType(BuiltList, [FullType(Situation)]);
+      const _responseType = FullType(BuiltList, [FullType(BusinessLineResponse)]);
       _responseData = _serializers.deserialize(
         _response.data!,
         specifiedType: _responseType,
-      ) as BuiltList<Situation>;
+      ) as BuiltList<BusinessLineResponse>;
 
     } catch (error, stackTrace) {
       throw DioError(
@@ -318,7 +318,7 @@ class ParamsApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<BuiltList<Situation>>(
+    return Response<BuiltList<BusinessLineResponse>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
