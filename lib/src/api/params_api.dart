@@ -9,9 +9,7 @@ import 'package:dio/dio.dart';
 
 import 'package:built_collection/built_collection.dart';
 import 'package:drassy_api/src/model/business_line_request.dart';
-import 'package:drassy_api/src/model/country_response.dart';
 import 'package:drassy_api/src/model/situation.dart';
-import 'package:drassy_api/src/model/transaction_type.dart';
 
 class ParamsApi {
 
@@ -342,9 +340,9 @@ class ParamsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<Situation>] as data
+  /// Returns a [Future] containing a [Response] with a [BuiltList<String>] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<BuiltList<Situation>>> getParamsFinancialsituation({ 
+  Future<Response<BuiltList<String>>> getParamsFinancialsituation({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -380,14 +378,14 @@ class ParamsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<Situation> _responseData;
+    BuiltList<String> _responseData;
 
     try {
-      const _responseType = FullType(BuiltList, [FullType(Situation)]);
+      const _responseType = FullType(BuiltList, [FullType(String)]);
       _responseData = _serializers.deserialize(
         _response.data!,
         specifiedType: _responseType,
-      ) as BuiltList<Situation>;
+      ) as BuiltList<String>;
 
     } catch (error, stackTrace) {
       throw DioError(
@@ -398,7 +396,7 @@ class ParamsApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<BuiltList<Situation>>(
+    return Response<BuiltList<String>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -421,9 +419,9 @@ class ParamsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<CountryResponse>] as data
+  /// Returns a [Future] containing a [Response] with a [BuiltList<String>] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<BuiltList<CountryResponse>>> getParamsListcountries({ 
+  Future<Response<BuiltList<String>>> getParamsListcountries({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -459,14 +457,14 @@ class ParamsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<CountryResponse> _responseData;
+    BuiltList<String> _responseData;
 
     try {
-      const _responseType = FullType(BuiltList, [FullType(CountryResponse)]);
+      const _responseType = FullType(BuiltList, [FullType(String)]);
       _responseData = _serializers.deserialize(
         _response.data!,
         specifiedType: _responseType,
-      ) as BuiltList<CountryResponse>;
+      ) as BuiltList<String>;
 
     } catch (error, stackTrace) {
       throw DioError(
@@ -477,7 +475,7 @@ class ParamsApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<BuiltList<CountryResponse>>(
+    return Response<BuiltList<String>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -808,9 +806,9 @@ class ParamsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<TransactionType>] as data
+  /// Returns a [Future] containing a [Response] with a [BuiltList<String>] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<BuiltList<TransactionType>>> getParamsTransactiontype({ 
+  Future<Response<BuiltList<String>>> getParamsTransactiontype({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -846,14 +844,14 @@ class ParamsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<TransactionType> _responseData;
+    BuiltList<String> _responseData;
 
     try {
-      const _responseType = FullType(BuiltList, [FullType(TransactionType)]);
+      const _responseType = FullType(BuiltList, [FullType(String)]);
       _responseData = _serializers.deserialize(
         _response.data!,
         specifiedType: _responseType,
-      ) as BuiltList<TransactionType>;
+      ) as BuiltList<String>;
 
     } catch (error, stackTrace) {
       throw DioError(
@@ -864,7 +862,7 @@ class ParamsApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<BuiltList<TransactionType>>(
+    return Response<BuiltList<String>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

@@ -89,7 +89,7 @@ paths:
       responses:
         "200":
           schema:
-            $ref: "#/definitions/CountryResponseList"
+            $ref: "#/definitions/FinancialSituationResponseList"
           description: Successful
   /params/matrimonials:
     get:
@@ -101,7 +101,7 @@ paths:
       responses:
         "200":
           schema:
-            $ref: "#/definitions/MatrimonialsResponseList"
+            $ref: "#/definitions/FinancialSituationResponseList"
           description: Successful
   /params/operation:
     get:
@@ -113,7 +113,7 @@ paths:
       responses:
         "200":
           schema:
-            $ref: "#/definitions/MatrimonialsResponseList"
+            $ref: "#/definitions/FinancialSituationResponseList"
           description: Successful
   /params/transactiontype:
     get:
@@ -125,7 +125,7 @@ paths:
       responses:
         "200":
           schema:
-            $ref: "#/definitions/Model1"
+            $ref: "#/definitions/FinancialSituationResponseList"
           description: Successful
   /transaction/date:
     get:
@@ -141,7 +141,7 @@ paths:
       responses:
         "200":
           schema:
-            $ref: "#/definitions/Model2"
+            $ref: "#/definitions/Model1"
           description: Successful
   /transaction/period:
     get:
@@ -160,7 +160,7 @@ paths:
       responses:
         "200":
           schema:
-            $ref: "#/definitions/Model2"
+            $ref: "#/definitions/Model1"
           description: Successful
   /transaction/search:
     get:
@@ -172,7 +172,7 @@ paths:
       responses:
         "200":
           schema:
-            $ref: "#/definitions/Model2"
+            $ref: "#/definitions/Model1"
           description: Successful
   /params/businessline/list:
     get:
@@ -184,7 +184,7 @@ paths:
       responses:
         "200":
           schema:
-            $ref: "#/definitions/FinancialSituationResponseList"
+            $ref: "#/definitions/BusinessLineResponseList"
           description: Successful
   /params/profession/list:
     get:
@@ -220,7 +220,7 @@ paths:
       responses:
         "200":
           schema:
-            $ref: "#/definitions/FinancialSituationResponseList"
+            $ref: "#/definitions/Model2"
           description: Successful
   /auth/changepassword:
     post:
@@ -691,20 +691,10 @@ definitions:
       $ref: "#/definitions/InvestOptionResponse"
   FinancialSituationResponseList:
     type: array
-    items:
-      $ref: "#/definitions/situation"
-  CountryResponseList:
-    type: array
-    items:
-      $ref: "#/definitions/CountryResponse"
-  MatrimonialsResponseList:
-    type: array
+    x-constraint:
+      single: true
     items:
       type: string
-  Model1:
-    type: array
-    items:
-      $ref: "#/definitions/transaction_type"
   type_transaction:
     type: object
     properties:
@@ -731,10 +721,20 @@ definitions:
         type: string
       type_transaction:
         $ref: "#/definitions/type_transaction"
-  Model2:
+  Model1:
     type: array
     items:
       $ref: "#/definitions/TransactionResponse"
+  BusinessLineResponseList:
+    type: array
+    x-constraint:
+      single: true
+    items:
+      $ref: "#/definitions/situation"
+  Model2:
+    type: array
+    items:
+      $ref: "#/definitions/situation"
   NewPasswordModel:
     type: object
     properties:
@@ -796,7 +796,7 @@ definitions:
         type: string
       profession:
         type: string
-      businessLineId:
+      business_lineId:
         type: integer
       total_person_at_charge:
         type: integer

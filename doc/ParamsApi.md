@@ -206,7 +206,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getParamsFinancialsituation**
-> BuiltList<Situation> getParamsFinancialsituation()
+> BuiltList<String> getParamsFinancialsituation()
 
  list Transaction Type
 
@@ -235,7 +235,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**BuiltList&lt;Situation&gt;**](Situation.md)
+**BuiltList&lt;String&gt;**
 
 ### Authorization
 
@@ -249,7 +249,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getParamsListcountries**
-> BuiltList<CountryResponse> getParamsListcountries()
+> BuiltList<String> getParamsListcountries()
 
 Country List 
 
@@ -278,7 +278,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**BuiltList&lt;CountryResponse&gt;**](CountryResponse.md)
+**BuiltList&lt;String&gt;**
 
 ### Authorization
 
@@ -464,7 +464,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getParamsTransactiontype**
-> BuiltList<TransactionType> getParamsTransactiontype()
+> BuiltList<String> getParamsTransactiontype()
 
  list Transaction Type
 
@@ -493,7 +493,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**BuiltList&lt;TransactionType&gt;**](TransactionType.md)
+**BuiltList&lt;String&gt;**
 
 ### Authorization
 

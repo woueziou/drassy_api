@@ -77,20 +77,12 @@ Serializers serializers = (_$serializers.toBuilder()
         () => ListBuilder<InvestOptionResponse>(),
       )
       ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(TransactionType)]),
-        () => ListBuilder<TransactionType>(),
-      )
-      ..addBuilderFactory(
         const FullType(BuiltList, [FullType(FixedLoadResponse)]),
         () => ListBuilder<FixedLoadResponse>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(Situation)]),
         () => ListBuilder<Situation>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(CountryResponse)]),
-        () => ListBuilder<CountryResponse>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(String)]),

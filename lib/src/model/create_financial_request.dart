@@ -25,7 +25,7 @@ abstract class CreateFinancialRequest implements Built<CreateFinancialRequest, C
     @BuiltValueField(wireName: r'profession')
     String? get profession;
 
-    @BuiltValueField(wireName: r'businessLineId')
+    @BuiltValueField(wireName: r'business_lineId')
     int? get businessLineId;
 
     @BuiltValueField(wireName: r'total_person_at_charge')
@@ -77,7 +77,7 @@ class _$CreateFinancialRequestSerializer implements StructuredSerializer<CreateF
         }
         if (object.businessLineId != null) {
             result
-                ..add(r'businessLineId')
+                ..add(r'business_lineId')
                 ..add(serializers.serialize(object.businessLineId,
                     specifiedType: const FullType(int)));
         }
@@ -130,7 +130,7 @@ class _$CreateFinancialRequestSerializer implements StructuredSerializer<CreateF
                         specifiedType: const FullType(String)) as String;
                     result.profession = valueDes;
                     break;
-                case r'businessLineId':
+                case r'business_lineId':
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(int)) as int;
                     result.businessLineId = valueDes;
