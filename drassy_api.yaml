@@ -707,10 +707,12 @@ definitions:
     properties:
       id:
         type: string
-      amount:
-        type: number
       note:
         type: string
+      amount:
+        type: integer
+      created_at:
+        type: integer
       type_transaction:
         $ref: "#/definitions/transaction_type"
   TransactionResponseList:

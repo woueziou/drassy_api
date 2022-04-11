@@ -10,9 +10,11 @@ class _$TransactionResponse extends TransactionResponse {
   @override
   final String? id;
   @override
-  final num? amount;
-  @override
   final String? note;
+  @override
+  final int? amount;
+  @override
+  final int? createdAt;
   @override
   final TransactionType? typeTransaction;
 
@@ -21,7 +23,7 @@ class _$TransactionResponse extends TransactionResponse {
       (new TransactionResponseBuilder()..update(updates)).build();
 
   _$TransactionResponse._(
-      {this.id, this.amount, this.note, this.typeTransaction})
+      {this.id, this.note, this.amount, this.createdAt, this.typeTransaction})
       : super._();
 
   @override
@@ -38,15 +40,17 @@ class _$TransactionResponse extends TransactionResponse {
     if (identical(other, this)) return true;
     return other is TransactionResponse &&
         id == other.id &&
-        amount == other.amount &&
         note == other.note &&
+        amount == other.amount &&
+        createdAt == other.createdAt &&
         typeTransaction == other.typeTransaction;
   }
 
   @override
   int get hashCode {
     return $jf($jc(
-        $jc($jc($jc(0, id.hashCode), amount.hashCode), note.hashCode),
+        $jc($jc($jc($jc(0, id.hashCode), note.hashCode), amount.hashCode),
+            createdAt.hashCode),
         typeTransaction.hashCode));
   }
 
@@ -54,8 +58,9 @@ class _$TransactionResponse extends TransactionResponse {
   String toString() {
     return (newBuiltValueToStringHelper('TransactionResponse')
           ..add('id', id)
-          ..add('amount', amount)
           ..add('note', note)
+          ..add('amount', amount)
+          ..add('createdAt', createdAt)
           ..add('typeTransaction', typeTransaction))
         .toString();
   }
@@ -69,13 +74,17 @@ class TransactionResponseBuilder
   String? get id => _$this._id;
   set id(String? id) => _$this._id = id;
 
-  num? _amount;
-  num? get amount => _$this._amount;
-  set amount(num? amount) => _$this._amount = amount;
-
   String? _note;
   String? get note => _$this._note;
   set note(String? note) => _$this._note = note;
+
+  int? _amount;
+  int? get amount => _$this._amount;
+  set amount(int? amount) => _$this._amount = amount;
+
+  int? _createdAt;
+  int? get createdAt => _$this._createdAt;
+  set createdAt(int? createdAt) => _$this._createdAt = createdAt;
 
   TransactionTypeBuilder? _typeTransaction;
   TransactionTypeBuilder get typeTransaction =>
@@ -91,8 +100,9 @@ class TransactionResponseBuilder
     final $v = _$v;
     if ($v != null) {
       _id = $v.id;
-      _amount = $v.amount;
       _note = $v.note;
+      _amount = $v.amount;
+      _createdAt = $v.createdAt;
       _typeTransaction = $v.typeTransaction?.toBuilder();
       _$v = null;
     }
@@ -117,8 +127,9 @@ class TransactionResponseBuilder
       _$result = _$v ??
           new _$TransactionResponse._(
               id: id,
-              amount: amount,
               note: note,
+              amount: amount,
+              createdAt: createdAt,
               typeTransaction: _typeTransaction?.build());
     } catch (_) {
       late String _$failedField;

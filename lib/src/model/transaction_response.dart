@@ -12,18 +12,22 @@ part 'transaction_response.g.dart';
 ///
 /// Properties:
 /// * [id] 
-/// * [amount] 
 /// * [note] 
+/// * [amount] 
+/// * [createdAt] 
 /// * [typeTransaction] 
 abstract class TransactionResponse implements Built<TransactionResponse, TransactionResponseBuilder> {
     @BuiltValueField(wireName: r'id')
     String? get id;
 
-    @BuiltValueField(wireName: r'amount')
-    num? get amount;
-
     @BuiltValueField(wireName: r'note')
     String? get note;
+
+    @BuiltValueField(wireName: r'amount')
+    int? get amount;
+
+    @BuiltValueField(wireName: r'created_at')
+    int? get createdAt;
 
     @BuiltValueField(wireName: r'type_transaction')
     TransactionType? get typeTransaction;
@@ -56,17 +60,23 @@ class _$TransactionResponseSerializer implements StructuredSerializer<Transactio
                 ..add(serializers.serialize(object.id,
                     specifiedType: const FullType(String)));
         }
-        if (object.amount != null) {
-            result
-                ..add(r'amount')
-                ..add(serializers.serialize(object.amount,
-                    specifiedType: const FullType(num)));
-        }
         if (object.note != null) {
             result
                 ..add(r'note')
                 ..add(serializers.serialize(object.note,
                     specifiedType: const FullType(String)));
+        }
+        if (object.amount != null) {
+            result
+                ..add(r'amount')
+                ..add(serializers.serialize(object.amount,
+                    specifiedType: const FullType(int)));
+        }
+        if (object.createdAt != null) {
+            result
+                ..add(r'created_at')
+                ..add(serializers.serialize(object.createdAt,
+                    specifiedType: const FullType(int)));
         }
         if (object.typeTransaction != null) {
             result
@@ -94,15 +104,20 @@ class _$TransactionResponseSerializer implements StructuredSerializer<Transactio
                         specifiedType: const FullType(String)) as String;
                     result.id = valueDes;
                     break;
-                case r'amount':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(num)) as num;
-                    result.amount = valueDes;
-                    break;
                 case r'note':
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(String)) as String;
                     result.note = valueDes;
+                    break;
+                case r'amount':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(int)) as int;
+                    result.amount = valueDes;
+                    break;
+                case r'created_at':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(int)) as int;
+                    result.createdAt = valueDes;
                     break;
                 case r'type_transaction':
                     final valueDes = serializers.deserialize(value,
