@@ -9,7 +9,7 @@ import 'package:drassy_api/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | [optional] 
-**amount** | **String** |  | [optional] 
+**amount** | **num** |  | [optional] 
 **note** | **String** |  | [optional] 
 **typeTransaction** | [**TransactionType**](TransactionType.md) |  | [optional] 
 

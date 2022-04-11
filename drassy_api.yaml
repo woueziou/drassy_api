@@ -702,34 +702,21 @@ definitions:
       single: true
     items:
       type: string
-  TransactionType:
-    type: object
-    properties:
-      id:
-        type: string
-        enum:
-          - true
-      name:
-        type: string
-        enum:
-          - true
-      operation_type:
-        type: string
-        enum:
-          - true
   TransactionResponse:
     type: object
     properties:
       id:
         type: string
       amount:
-        type: string
+        type: number
       note:
         type: string
       type_transaction:
-        $ref: "#/definitions/TransactionType"
+        $ref: "#/definitions/transaction_type"
   TransactionResponseList:
     type: array
+    x-constraint:
+      single: true
     items:
       $ref: "#/definitions/TransactionResponse"
   BusinessLineResponse:

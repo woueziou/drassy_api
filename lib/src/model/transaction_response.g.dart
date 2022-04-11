@@ -10,7 +10,7 @@ class _$TransactionResponse extends TransactionResponse {
   @override
   final String? id;
   @override
-  final String? amount;
+  final num? amount;
   @override
   final String? note;
   @override
@@ -69,9 +69,9 @@ class TransactionResponseBuilder
   String? get id => _$this._id;
   set id(String? id) => _$this._id = id;
 
-  String? _amount;
-  String? get amount => _$this._amount;
-  set amount(String? amount) => _$this._amount = amount;
+  num? _amount;
+  num? get amount => _$this._amount;
+  set amount(num? amount) => _$this._amount = amount;
 
   String? _note;
   String? get note => _$this._note;

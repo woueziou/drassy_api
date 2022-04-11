@@ -20,7 +20,7 @@ abstract class TransactionResponse implements Built<TransactionResponse, Transac
     String? get id;
 
     @BuiltValueField(wireName: r'amount')
-    String? get amount;
+    num? get amount;
 
     @BuiltValueField(wireName: r'note')
     String? get note;
@@ -60,7 +60,7 @@ class _$TransactionResponseSerializer implements StructuredSerializer<Transactio
             result
                 ..add(r'amount')
                 ..add(serializers.serialize(object.amount,
-                    specifiedType: const FullType(String)));
+                    specifiedType: const FullType(num)));
         }
         if (object.note != null) {
             result
@@ -96,7 +96,7 @@ class _$TransactionResponseSerializer implements StructuredSerializer<Transactio
                     break;
                 case r'amount':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
+                        specifiedType: const FullType(num)) as num;
                     result.amount = valueDes;
                     break;
                 case r'note':
